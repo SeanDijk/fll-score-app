@@ -1,6 +1,8 @@
 package mission
 
+import state.State
+
 interface MissionPart {
 
-    fun getScore(): Int
+    fun getScore(): State<Int>
 }

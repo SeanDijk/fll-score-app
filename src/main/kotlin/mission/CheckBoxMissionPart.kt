@@ -1,11 +1,18 @@
 package mission
 
-class CheckBoxMissionPart(val description: String, val completionScore: Int) : MissionPart {
-    override fun getScore(): Int {
-        return if (completed) completionScore else 0
+import state.State
+
+class CheckBoxMissionPart(val description: String, private val completionScore: Int): MissionPart {
+    override fun getScore() = score
+
+    var completed = State(false)
+    val score = State(0)
+
+    init {
+        completed.observe { previous, new ->
+            if (new) score.update(completionScore)
+            else score.update(0)
+        }
     }
-
-    var completed: Boolean = false;
-
 
 }
