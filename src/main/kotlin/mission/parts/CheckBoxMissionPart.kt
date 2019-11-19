@@ -1,5 +1,6 @@
-package mission
+package mission.parts
 
+import mission.MissionPart
 import state.State
 
 class CheckBoxMissionPart(val description: String, private val completionScore: Int): MissionPart {

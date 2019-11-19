@@ -1,8 +1,10 @@
 package mission
 
+import factory.HtmlFactory.createFor
 import kotlinx.html.InputType
 import kotlinx.html.dom.append
 import kotlinx.html.js.br
+import kotlinx.html.js.div
 import kotlinx.html.js.input
 import kotlinx.html.js.span
 import state.bindTo
@@ -11,11 +13,11 @@ import kotlin.browser.window
 
 fun main(args: Array<String>) {
     println("Hello JavaScript!")
-    val part = CheckBoxMissionPart("", 100)
-    val part2 = CheckBoxMissionPart("", 25)
-    val part3 = CheckBoxMissionPart("", 50)
+    val part = CheckBoxMissionPart("Description 1", 100)
+    val part2 = CheckBoxMissionPart("Description 2", 25)
+    val part3 = CheckBoxMissionPart("Description 3", 50)
 
-    val mission = Mission("", "", "",  part, part2, part3)
+    val mission = Mission("M01", "Mission 01", "This is the description of mission one",  part, part2, part3)
     window.onload = {
 
         val missionsSection = document.getElementById("missions")
@@ -26,20 +28,15 @@ fun main(args: Array<String>) {
         val missionPart = CheckBoxMissionPart("Hello world!", 20)
 
         missionsSection?.append {
-            span {  }.apply { bindTo(mission.totalScore) }
-            br {  }
-        }
-        mission.missionParts.forEach {
-            it as CheckBoxMissionPart
-            missionsSection!!.append {
-                input {
-                    type = InputType.checkBox
-                }.apply { bindTo(it.completed) }
-                span {  }.apply { bindTo(it.score) }
-                br {  }
+            div("flex-column") {
+                div("flex-row mission-header") {
+                    span { +mission.name}
+                    span {  }.bindTo(mission.totalScore)
+                }
+                mission.missionParts.forEach {
+                    createFor(it)
+                }
             }
         }
-
-
     }
 }
