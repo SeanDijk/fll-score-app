@@ -21,29 +21,49 @@ dependencies {
 kotlin.target.browser { }
 
 task bundleWebApp(type: Copy) {
-        dependsOn(compileKotlinJs)
-        println "Packaging web app"
+    dependsOn(compileKotlinJs)
+    println "Packaging web app"
 
-        into "build/webapp"
-        from "src/webapp"
+    into "build/webapp"
+    from "src/webapp"
 
-        def jsFileTree = fileTree("build/js/packages_imported/") {
-            include('**/*.js')
-            exclude("*test*/**")
-        }.files
-        println jsFileTree
+    def jsFileTree = fileTree("build/js/packages_imported/") {
+        include('**/*.js')
+        exclude("*test*/**")
+    }.files
+    println jsFileTree
 
-        from (jsFileTree) {
-            include('**/*.js')
-            into "js/"
-        }
-        from ("build/js/packages/fll-score-app/kotlin/fll-score-app.js") {
-            into "js/"
-        }
-
-
+    from (jsFileTree) {
+        include('**/*.js')
+        into "js/"
+    }
+    from ("build/js/packages/fll-score-app/kotlin/fll-score-app.js") {
+        into "js/"
+    }
 }
 
 build {
-    finalizedBy(bundleWebApp)
+//    finalizedBy(bundleWebApp)
+    doLast {
+        copy {
+            println "Packaging web app1"
+
+            into "build/webapp"
+            from "src/webapp"
+
+            def jsFileTree = fileTree("build/js/packages_imported/") {
+                include('**/*.js')
+                exclude("*test*/**")
+            }.files
+            println jsFileTree
+
+            from (jsFileTree) {
+                include('**/*.js')
+                into "js/"
+            }
+            from ("build/js/packages/fll-score-app/kotlin/fll-score-app.js") {
+                into "js/"
+            }
+        }
+    }
 }
