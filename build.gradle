@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.js' version '1.3.41'
+    id 'org.jetbrains.kotlin.js' version '1.3.60'
 }
 
 group 'nl.seanvandijk'
@@ -8,6 +8,7 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
     jcenter()
+
 }
 
 dependencies {
@@ -18,3 +19,29 @@ dependencies {
 }
 
 kotlin.target.browser { }
+
+task bundleWebApp(type: Copy) {
+    dependsOn(build)
+    println "Packaging web app"
+
+    into "build/webapp"
+    from "src/webapp"
+
+    def jsFileTree = fileTree("build/js/packages_imported/") {
+        include('**/*.js')
+        exclude("*test*/**")
+    }.files
+    println jsFileTree
+
+    from (jsFileTree) {
+        include('**/*.js')
+        into "js/"
+    }
+    from ("build/js/packages/fll-score-app/kotlin/fll-score-app.js") {
+        into "js/"
+    }
+}
+
+build {
+    finalizedBy(bundleWebApp)
+}
