@@ -1,7 +1,7 @@
 package state
 
-import mission.CheckBoxMissionPart
 import mission.Mission
+import mission.parts.CheckBoxMissionPart
 
 object ApplicationState {
 

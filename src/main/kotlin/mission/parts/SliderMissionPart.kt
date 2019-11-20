@@ -3,17 +3,26 @@ package mission.parts
 import mission.MissionPart
 import state.State
 
-class SliderMissionPart(val description: String, private val completionScore: Int): MissionPart {
+class SliderMissionPart(val description: String,
+                        val min: Int,
+                        val max: Int,
+                        val scoreMap: Map<Int, Int>) : MissionPart {
     override fun getScore() = score
 
-//    var completed = State(false)
-//    val score = State(0)
-//
-//    init {
-//        completed.observe { previous, new ->
-//            if (new) score.update(completionScore)
-//            else score.update(0)
-//        }
-//    }
+    constructor(description: String, min: Int, max: Int, calculateScore: (Int) -> Int) :
+            this(description, min, max,
+                (min..max).asSequence()
+                    .map { Pair(it, calculateScore(it)) }
+                    .toMap()
+            )
+
+    var value = State(min)
+    var score = State(scoreMap[min] ?: error("Invalid value given to get score: $min"))
+    init {
+        value.observe { _, new ->
+            println("Value set to $new")
+            score.update(scoreMap[new] ?: error("Invalid value given to get score: $new"))
+        }
+    }
 
 }

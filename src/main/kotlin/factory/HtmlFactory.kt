@@ -5,9 +5,10 @@ import kotlinx.html.TagConsumer
 import kotlinx.html.js.input
 import kotlinx.html.js.div
 import kotlinx.html.js.span
-import mission.CheckBoxMissionPart
 import mission.Mission
 import mission.MissionPart
+import mission.parts.CheckBoxMissionPart
+import mission.parts.SliderMissionPart
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLElement
 import state.bindTo
@@ -31,8 +32,8 @@ object HtmlFactory {
         println(CheckBoxMissionPart::class == missionPart::class)
         when(missionPart::class) {
             CheckBoxMissionPart::class -> createFor(missionPart as CheckBoxMissionPart)
-
-            else -> throw RuntimeException("MissionPart type not implemented in factory: " + missionPart::class.js)
+            SliderMissionPart::class -> createFor(missionPart as SliderMissionPart)
+            else -> throw RuntimeException("MissionPart type not implemented in factory: " + missionPart::class)
         }
 
     }
@@ -43,6 +44,18 @@ object HtmlFactory {
             input {
                 type = InputType.checkBox
             }.bindTo(missionPart.completed)
+        }
+    }
+
+    private fun TagConsumer<HTMLElement>.createFor(missionPart: SliderMissionPart) {
+        div("flex-row mission-row") {
+            span { +missionPart.description }
+            input {
+                type = InputType.range
+                min = missionPart.min.toString()
+                max = missionPart.max.toString()
+                step = 1.toString()
+            }.bindTo(missionPart.value)
         }
     }
 
