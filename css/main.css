@@ -1,0 +1,24 @@
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-header {
+    background: #1976d2;
+    color: white;
+}
+
+.mission-row, .mission-header{
+    padding: 8px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.flex-filler {
+    flex-grow: 100;
+}
