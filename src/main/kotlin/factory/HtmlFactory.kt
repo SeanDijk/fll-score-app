@@ -5,13 +5,11 @@ import kotlinx.html.TagConsumer
 import kotlinx.html.js.input
 import kotlinx.html.js.div
 import kotlinx.html.js.span
-import mission.Mission
 import mission.MissionPart
 import mission.parts.CheckBoxMissionPart
+import mission.parts.ExtraPointsForAllCompletedMissionPart
 import mission.parts.SliderMissionPart
-import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLElement
-import state.bindTo
 
 
 object HtmlFactory {
@@ -51,11 +49,28 @@ object HtmlFactory {
         div("flex-row mission-row") {
             span { +missionPart.description }
             input {
+                type = InputType //todo
+            }.bindTo(missionPart.value).whenConditionIsMet{ event ->
+                //todo check if is int
+                val intValue = value.toInt();
+                return@whenConditionIsMet intValue in missionPart.min..missionPart.max
+            }
+
+            input {
                 type = InputType.range
                 min = missionPart.min.toString()
                 max = missionPart.max.toString()
                 step = 1.toString()
             }.bindTo(missionPart.value)
+        }
+    }
+
+    private fun TagConsumer<HTMLElement>.createFor(missionPart: ExtraPointsForAllCompletedMissionPart) {
+        div("flex-row mission-row") {
+            span { +missionPart.description }
+            input {
+                type = InputType.checkBox
+            }.bindTo(missionPart.completed)
         }
     }
 
