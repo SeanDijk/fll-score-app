@@ -1,7 +1,11 @@
 package mission
 
+import kotlinx.serialization.*
+import kotlinx.serialization.internal.SerialClassDescImpl
+import kotlinx.serialization.json.Json
 import state.State
 
+//@Serializable
 class Mission(val id: String,
               val name: String,
               val description: String,
@@ -15,4 +19,16 @@ class Mission(val id: String,
         }
     }
 
+
+//    @Serializer(forClass = Mission::class)
+//    companion object : KSerializer<Mission> {
+//
+//        override fun serialize(encoder: Encoder, obj: Mission) {
+//            Json.parse()
+//        }
+//
+//        override fun deserialize(decoder: Decoder): Mission {
+//
+//        }
+//    }
 }

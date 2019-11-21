@@ -29,12 +29,10 @@ inline fun <reified T> HTMLInputElement.bindTo(state: State<T>): HTMLInputElemen
         return bindToInputCheckBox(state.unsafeCast<State<Boolean>>())
     } else if (this.type == InputType.range.realValue && T::class == Int::class) {
         return bindToInputRange(state.unsafeCast<State<Int>>())
-    } else if (this.type == "todo" && T::class == Int::class) {
+    } else if (this.type == InputType.number.realValue && T::class == Int::class) {
         return bindToInputTextField(state, {s -> s.toInt() as T }, { t -> t.toString()})
-    } else if (this.type == "todo" && T::class == String::class) {
-        return bindToInputTextField(state, {s -> s as T }, { t -> t.toString()})
     }
-    return this
+    throw RuntimeException("Not defined how to bind to this type! type: $type")
 }
 
 fun HTMLInputElement.bindToInputRange(state: State<Int>): HTMLInputElement {

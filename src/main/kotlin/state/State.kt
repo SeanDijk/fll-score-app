@@ -1,7 +1,9 @@
 package state
 
-class State<T>(initialState: T){
-    private var state: T = initialState
+import kotlinx.serialization.Serializable
+
+@Serializable
+class State<T>(private var state: T){
     private val observers: MutableList<Observer<T>> = mutableListOf()
 
     fun update(newState: T){

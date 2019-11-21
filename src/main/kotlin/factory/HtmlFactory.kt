@@ -10,6 +10,8 @@ import mission.parts.CheckBoxMissionPart
 import mission.parts.ExtraPointsForAllCompletedMissionPart
 import mission.parts.SliderMissionPart
 import org.w3c.dom.HTMLElement
+import state.bindTo
+import state.whenConditionIsMet
 
 
 object HtmlFactory {
@@ -48,14 +50,13 @@ object HtmlFactory {
     private fun TagConsumer<HTMLElement>.createFor(missionPart: SliderMissionPart) {
         div("flex-row mission-row") {
             span { +missionPart.description }
+            div("flex-filler") {}
             input {
-                type = InputType //todo
-            }.bindTo(missionPart.value).whenConditionIsMet{ event ->
-                //todo check if is int
-                val intValue = value.toInt();
-                return@whenConditionIsMet intValue in missionPart.min..missionPart.max
-            }
-
+                type = InputType.number
+                min = missionPart.min.toString()
+                max = missionPart.max.toString()
+                step = 1.toString()
+            }.bindTo(missionPart.value)
             input {
                 type = InputType.range
                 min = missionPart.min.toString()

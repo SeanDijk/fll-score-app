@@ -1,8 +1,10 @@
 package mission.parts
 
+import kotlinx.serialization.Serializable
 import mission.MissionPart
 import state.State
 
+@Serializable
 class SliderMissionPart(val description: String,
                         val min: Int,
                         val max: Int,
@@ -24,5 +26,4 @@ class SliderMissionPart(val description: String,
             score.update(scoreMap[new] ?: error("Invalid value given to get score: $new"))
         }
     }
-
 }

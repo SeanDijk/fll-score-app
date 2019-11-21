@@ -1,5 +1,6 @@
 package mission.parts
 
+import kotlinx.serialization.Serializable
 import mission.MissionPart
 import state.State
 
