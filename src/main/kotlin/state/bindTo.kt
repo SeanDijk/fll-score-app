@@ -17,14 +17,14 @@ fun HTMLElement.whenConditionIsMet(condition: (event: Event) -> Boolean): HTMLEl
 }
 
 
-inline fun <reified T> HTMLSpanElement.bindTo(state: State<T>): HTMLSpanElement {
+inline fun <reified T: Any> HTMLSpanElement.bindTo(state: State<T>): HTMLSpanElement {
     state.observe { _, new ->
         this.innerText = new.toString()
     }
     return this
 }
 
-inline fun <reified T> HTMLInputElement.bindTo(state: State<T>): HTMLInputElement {
+inline fun <reified T: Any> HTMLInputElement.bindTo(state: State<T>): HTMLInputElement {
     if (this.type == InputType.checkBox.realValue && T::class == Boolean::class) {
         return bindToInputCheckBox(state.unsafeCast<State<Boolean>>())
     } else if (this.type == InputType.range.realValue && T::class == Int::class) {
@@ -59,7 +59,7 @@ fun HTMLInputElement.bindToInputCheckBox(state: State<Boolean>): HTMLInputElemen
     return this
 }
 
-fun <T> HTMLInputElement.bindToInputTextField(state: State<T>, stringToT: (String) -> T, stringFromT: (T) -> String): HTMLInputElement {
+fun <T: Any> HTMLInputElement.bindToInputTextField(state: State<T>, stringToT: (String) -> T, stringFromT: (T) -> String): HTMLInputElement {
     this.onchange = { event ->
         if (event.isTrusted) {
             state.update(stringToT(value))

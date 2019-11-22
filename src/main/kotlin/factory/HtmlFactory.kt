@@ -2,34 +2,42 @@ package factory
 
 import kotlinx.html.InputType
 import kotlinx.html.TagConsumer
-import kotlinx.html.js.input
 import kotlinx.html.js.div
+import kotlinx.html.js.input
 import kotlinx.html.js.span
+import mission.Challenge
+import mission.Mission
 import mission.MissionPart
 import mission.parts.CheckBoxMissionPart
 import mission.parts.ExtraPointsForAllCompletedMissionPart
 import mission.parts.SliderMissionPart
 import org.w3c.dom.HTMLElement
 import state.bindTo
-import state.whenConditionIsMet
 
 
 object HtmlFactory {
 
-//    fun createFor(mission: Mission): HTMLDivElement {
-//        return document.create.div("flex-column") {
-//            id = mission.id
-//            span { +mission.name }
-//        }.apply {
-////            mission.missionParts.forEachIndexed {
-////            }
-//        }
-//    }
+    fun TagConsumer<HTMLElement>.createFor(challenge: Challenge) {
+        div("flex-column") {
+            challenge.missions.forEach {
+                createFor(it)
+            }
+        }
+    }
+
+    fun TagConsumer<HTMLElement>.createFor(mission: Mission) {
+        div("flex-column") {
+            div("flex-row mission-header") {
+                span { +mission.name}
+                span {  }.bindTo(mission.totalScore)
+            }
+            mission.missionParts.forEach {
+                createFor(it)
+            }
+        }
+    }
 
     fun TagConsumer<HTMLElement>.createFor(missionPart: MissionPart) {
-        println(missionPart::class)
-        println(CheckBoxMissionPart::class)
-        println(CheckBoxMissionPart::class == missionPart::class)
         when(missionPart::class) {
             CheckBoxMissionPart::class -> createFor(missionPart as CheckBoxMissionPart)
             SliderMissionPart::class -> createFor(missionPart as SliderMissionPart)
