@@ -19,6 +19,7 @@
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var Unit = Kotlin.kotlin.Unit;
+  var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
   var div = $module$kotlinx_html_js.kotlinx.html.js.div_wkomt5$;
   var span = $module$kotlinx_html_js.kotlinx.html.js.span_x24v7w$;
   var Int = Number;
@@ -34,21 +35,23 @@
   var PrimitiveClasses$booleanClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.booleanClass;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
-  var Kind_CLASS = Kotlin.Kind.CLASS;
-  var toList = Kotlin.kotlin.collections.toList_us0mfu$;
-  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
-  var println = Kotlin.kotlin.io.println_s8jyv4$;
-  var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
   var kotlin_js_internal_StringCompanionObject = Kotlin.kotlin.js.internal.StringCompanionObject;
   var serializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_6eet4j$;
   var to = Kotlin.kotlin.to_ujzrz7$;
+  var get_list = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.get_list_gekvwj$;
   var kotlin_js_internal_IntCompanionObject = Kotlin.kotlin.js.internal.IntCompanionObject;
   var serializer_0 = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_qn7glr$;
+  var hashMapOf = Kotlin.kotlin.collections.hashMapOf_qfcya0$;
+  var List = Kotlin.kotlin.collections.List;
+  var KSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.KSerializer;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
+  var PolymorphicSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.PolymorphicSerializer;
+  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
+  var Json = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.json.Json;
+  var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
   var kotlin_js_internal_BooleanCompanionObject = Kotlin.kotlin.js.internal.BooleanCompanionObject;
   var serializer_1 = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_jtjczu$;
-  var hashMapOf = Kotlin.kotlin.collections.hashMapOf_qfcya0$;
-  var KSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.KSerializer;
-  var print = Kotlin.kotlin.io.print_s8jyv4$;
   var Map = Kotlin.kotlin.collections.Map;
   var IntRange = Kotlin.kotlin.ranges.IntRange;
   var asSequence = Kotlin.kotlin.collections.asSequence_7wnvza$;
@@ -61,6 +64,7 @@
   var withName = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.withName_8new1j$;
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_bwtc7$;
+  var SerializersModule = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.modules.SerializersModule_q4tcel$;
   var SerializationException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.SerializationException;
   var ensureNotNull = Kotlin.ensureNotNull;
   var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
@@ -69,6 +73,7 @@
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var defineInlineFunction = Kotlin.defineInlineFunction;
   var wrapFunction = Kotlin.wrapFunction;
+  var toShort = Kotlin.toShort;
   SerializationHelper$descriptor$ObjectLiteral.prototype = Object.create(SerialClassDescImpl.prototype);
   SerializationHelper$descriptor$ObjectLiteral.prototype.constructor = SerializationHelper$descriptor$ObjectLiteral;
   function bindTo$lambda(this$bindTo) {
@@ -89,8 +94,15 @@
   function HtmlFactory() {
     HtmlFactory_instance = this;
   }
+  function HtmlFactory$createFor$lambda$lambda(closure$challenge) {
+    return function ($receiver) {
+      $receiver.unaryPlus_pdl1vz$(closure$challenge.name);
+      return Unit;
+    };
+  }
   function HtmlFactory$createFor$lambda(closure$challenge, this$HtmlFactory, this$createFor) {
     return function ($receiver) {
+      h1($receiver, void 0, HtmlFactory$createFor$lambda$lambda(closure$challenge));
       var $receiver_0 = closure$challenge.missions;
       var tmp$;
       tmp$ = $receiver_0.iterator();
@@ -113,7 +125,7 @@
   function HtmlFactory$createFor$lambda$lambda$lambda_0($receiver) {
     return Unit;
   }
-  function HtmlFactory$createFor$lambda$lambda(closure$mission, this$createFor) {
+  function HtmlFactory$createFor$lambda$lambda_0(closure$mission, this$createFor) {
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda$lambda(closure$mission));
       var $receiver_0 = span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda$lambda_0);
@@ -123,7 +135,7 @@
   }
   function HtmlFactory$createFor$lambda_0(closure$mission, this$createFor, this$HtmlFactory) {
     return function ($receiver) {
-      div(this$createFor, 'flex-row mission-header', HtmlFactory$createFor$lambda$lambda(closure$mission, this$createFor));
+      div(this$createFor, 'flex-row mission-header', HtmlFactory$createFor$lambda$lambda_0(closure$mission, this$createFor));
       var $receiver_0 = closure$mission.missionParts;
       var tmp$;
       tmp$ = $receiver_0.iterator();
@@ -149,20 +161,20 @@
      else
       throw RuntimeException_init('MissionPart type not implemented in factory: ' + toString(Kotlin.getKClassFromExpression(missionPart)));
   };
-  function HtmlFactory$createFor$lambda$lambda_0(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_1(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_1($receiver) {
+  function HtmlFactory$createFor$lambda$lambda_2($receiver) {
     $receiver.type = InputType.checkBox;
     return Unit;
   }
   function HtmlFactory$createFor$lambda_1(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_0(closure$missionPart));
-      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_1);
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_1(closure$missionPart));
+      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_2);
       var state = closure$missionPart.completed;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1;
@@ -187,16 +199,16 @@
   HtmlFactory.prototype.createFor_0 = function ($receiver, missionPart) {
     div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_1(missionPart, $receiver));
   };
-  function HtmlFactory$createFor$lambda$lambda_2(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_3(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_3($receiver) {
+  function HtmlFactory$createFor$lambda$lambda_4($receiver) {
     return Unit;
   }
-  function HtmlFactory$createFor$lambda$lambda_4(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_5(closure$missionPart) {
     return function ($receiver) {
       $receiver.type = InputType.number;
       $receiver.min = closure$missionPart.min.toString();
@@ -205,7 +217,7 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_5(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart) {
     return function ($receiver) {
       $receiver.type = InputType.range;
       $receiver.min = closure$missionPart.min.toString();
@@ -216,9 +228,9 @@
   }
   function HtmlFactory$createFor$lambda_2(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_2(closure$missionPart));
-      div(this$createFor, 'flex-filler', HtmlFactory$createFor$lambda$lambda_3);
-      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_4(closure$missionPart));
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_3(closure$missionPart));
+      div(this$createFor, 'flex-filler', HtmlFactory$createFor$lambda$lambda_4);
+      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
       var state = closure$missionPart.value;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1;
@@ -237,7 +249,7 @@
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
       }
        while (false);
-      var $receiver_1 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
+      var $receiver_1 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
       var state_0 = closure$missionPart.value;
       bindTo$break: do {
         var tmp$_2, tmp$_3, tmp$_4;
@@ -262,20 +274,20 @@
   HtmlFactory.prototype.createFor_1 = function ($receiver, missionPart) {
     div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_2(missionPart, $receiver));
   };
-  function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_7(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_7($receiver) {
+  function HtmlFactory$createFor$lambda$lambda_8($receiver) {
     $receiver.type = InputType.checkBox;
     return Unit;
   }
   function HtmlFactory$createFor$lambda_3(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
-      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_7);
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_7(closure$missionPart));
+      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_8);
       var state = closure$missionPart.completed;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1;
@@ -316,16 +328,53 @@
     Challenge$Companion_getInstance();
     this.name = name;
     this.missions = missions;
+    this.totalChallengeScore = new State(0);
+    var tmp$;
+    tmp$ = this.missions.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.totalScore.observe_e2wk6p$(Challenge_init$lambda$lambda(this));
+    }
   }
   function Challenge$Companion() {
     Challenge$Companion_instance = this;
+    this.helper_0 = new SerializationHelper(getKClass(Challenge), hashMapOf([to(0, new HelperHolder('name', serializer(kotlin_js_internal_StringCompanionObject), Challenge$Companion$helper$lambda)), to(1, new HelperHolder('missions', get_list(Mission$Companion_getInstance().serializer()), Challenge$Companion$helper$lambda_0)), to(2, new HelperHolder('totalChallengeScore', new StateSerializer(serializer_0(kotlin_js_internal_IntCompanionObject)), Challenge$Companion$helper$lambda_1))]), Challenge$Companion$helper$lambda_2);
+    this.descriptor_q0qacc$_0 = this.helper_0.descriptor;
   }
-  Challenge$Companion.prototype.fromConfiguration = function () {
+  Object.defineProperty(Challenge$Companion.prototype, 'descriptor', {
+    get: function () {
+      return this.descriptor_q0qacc$_0;
+    }
+  });
+  Challenge$Companion.prototype.serialize_awe97i$ = function (encoder, obj) {
+    this.helper_0.serialize_awe97i$(encoder, obj);
   };
+  Challenge$Companion.prototype.deserialize_nts5qn$ = function (decoder) {
+    return this.helper_0.deserialize_nts5qn$(decoder);
+  };
+  Challenge$Companion.prototype.serializer = function () {
+    return Challenge$Companion_getInstance();
+  };
+  function Challenge$Companion$helper$lambda(it) {
+    return it.name;
+  }
+  function Challenge$Companion$helper$lambda_0(it) {
+    return it.missions;
+  }
+  function Challenge$Companion$helper$lambda_1(it) {
+    return it.totalChallengeScore;
+  }
+  function Challenge$Companion$helper$lambda_2(it) {
+    var tmp$, tmp$_0;
+    var $receiver = new Challenge(typeof (tmp$ = it.get_11rb$('name')) === 'string' ? tmp$ : throwCCE(), Kotlin.isType(tmp$_0 = it.get_11rb$('missions'), List) ? tmp$_0 : throwCCE());
+    var tmp$_1;
+    $receiver.totalChallengeScore.update_trkh7z$((Kotlin.isType(tmp$_1 = it.get_11rb$('totalChallengeScore'), State) ? tmp$_1 : throwCCE()).getCurrentState());
+    return $receiver;
+  }
   Challenge$Companion.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'Companion',
-    interfaces: []
+    interfaces: [KSerializer]
   };
   var Challenge$Companion_instance = null;
   function Challenge$Companion_getInstance() {
@@ -334,22 +383,79 @@
     }
     return Challenge$Companion_instance;
   }
+  function Challenge_init$lambda$lambda(this$Challenge) {
+    return function (previous, new_0) {
+      this$Challenge.totalChallengeScore.update_trkh7z$(this$Challenge.totalChallengeScore.getCurrentState() + new_0 - previous | 0);
+      return Unit;
+    };
+  }
   Challenge.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'Challenge',
     interfaces: []
   };
-  function Mission(id, name, description, missionParts) {
-    this.id = id;
+  function Mission(name, description, missionParts) {
+    Mission$Companion_getInstance();
     this.name = name;
     this.description = description;
-    this.missionParts = toList(missionParts);
+    this.missionParts = missionParts;
     this.totalScore = new State(0);
     var tmp$;
-    for (tmp$ = 0; tmp$ !== missionParts.length; ++tmp$) {
-      var element = missionParts[tmp$];
+    tmp$ = this.missionParts.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
       element.getScore().observe_e2wk6p$(Mission_init$lambda$lambda(this));
     }
+  }
+  function Mission$Companion() {
+    Mission$Companion_instance = this;
+    this.helper_0 = new SerializationHelper(getKClass(Mission), hashMapOf([to(0, new HelperHolder('name', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda)), to(1, new HelperHolder('description', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda_0)), to(2, new HelperHolder('missionParts', get_list(new PolymorphicSerializer(getKClass(MissionPart))), Mission$Companion$helper$lambda_1)), to(3, new HelperHolder('totalScore', new StateSerializer(serializer_0(kotlin_js_internal_IntCompanionObject)), Mission$Companion$helper$lambda_2))]), Mission$Companion$helper$lambda_3);
+    this.descriptor_bkbtbv$_0 = this.helper_0.descriptor;
+  }
+  Object.defineProperty(Mission$Companion.prototype, 'descriptor', {
+    get: function () {
+      return this.descriptor_bkbtbv$_0;
+    }
+  });
+  Mission$Companion.prototype.serialize_awe97i$ = function (encoder, obj) {
+    this.helper_0.serialize_awe97i$(encoder, obj);
+  };
+  Mission$Companion.prototype.deserialize_nts5qn$ = function (decoder) {
+    return this.helper_0.deserialize_nts5qn$(decoder);
+  };
+  Mission$Companion.prototype.serializer = function () {
+    return Mission$Companion_getInstance();
+  };
+  function Mission$Companion$helper$lambda(it) {
+    return it.name;
+  }
+  function Mission$Companion$helper$lambda_0(it) {
+    return it.description;
+  }
+  function Mission$Companion$helper$lambda_1(it) {
+    return it.missionParts;
+  }
+  function Mission$Companion$helper$lambda_2(it) {
+    return it.totalScore;
+  }
+  function Mission$Companion$helper$lambda_3(it) {
+    var tmp$, tmp$_0, tmp$_1;
+    var $receiver = new Mission(typeof (tmp$ = it.get_11rb$('name')) === 'string' ? tmp$ : throwCCE(), typeof (tmp$_0 = it.get_11rb$('description')) === 'string' ? tmp$_0 : throwCCE(), Kotlin.isType(tmp$_1 = it.get_11rb$('missionParts'), List) ? tmp$_1 : throwCCE());
+    var tmp$_2;
+    $receiver.totalScore.update_trkh7z$((Kotlin.isType(tmp$_2 = it.get_11rb$('totalScore'), State) ? tmp$_2 : throwCCE()).getCurrentState());
+    return $receiver;
+  }
+  Mission$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: [KSerializer]
+  };
+  var Mission$Companion_instance = null;
+  function Mission$Companion_getInstance() {
+    if (Mission$Companion_instance === null) {
+      new Mission$Companion();
+    }
+    return Mission$Companion_instance;
   }
   function Mission_init$lambda$lambda(this$Mission) {
     return function (previous, new_0) {
@@ -369,28 +475,28 @@
     simpleName: 'MissionPart',
     interfaces: []
   };
-  function main$lambda(it) {
-    return it * 10 | 0;
-  }
-  function main$lambda$lambda(closure$mission) {
-    return function ($receiver) {
-      HtmlFactory_getInstance().createFor_j02ad4$($receiver, closure$mission);
+  function main$lambda$lambda$lambda(closure$json, this$) {
+    return function (it) {
+      HtmlFactory_getInstance().createFor_8dmwun$(this$, closure$json.parse_awif5v$(Challenge$Companion_getInstance().serializer(), JSON.stringify(it)));
       return Unit;
     };
   }
-  function main$lambda_0(closure$mission) {
+  function main$lambda$lambda(closure$json) {
+    return function ($receiver) {
+      FileUtil_getInstance().loadJSON_a1vqyy$('defaultChallenges/my-test-template.json', main$lambda$lambda$lambda(closure$json, $receiver));
+      return Unit;
+    };
+  }
+  function main$lambda(closure$json) {
     return function (it) {
       var missionsSection = document.getElementById('missions');
-      return missionsSection != null ? append(missionsSection, main$lambda$lambda(closure$mission)) : null;
+      return missionsSection != null ? append(missionsSection, main$lambda$lambda(closure$json)) : null;
     };
   }
   function main(args) {
     println('Hello JavaScript!');
-    var part = new CheckBoxMissionPart('Description 1', 100);
-    var part2 = new CheckBoxMissionPart('Description 2', 25);
-    var part3 = SliderMissionPart_init('Description 3', 0, 6, main$lambda);
-    var mission = new Mission('M01', 'Mission 01', 'This is the description of mission one', [part, part2, part3]);
-    window.onload = main$lambda_0(mission);
+    var json = new Json(void 0, PolyModules_getInstance().missionPart);
+    window.onload = main$lambda(json);
   }
   function CheckBoxMissionPart(description, completionScore) {
     CheckBoxMissionPart$Companion_getInstance();
@@ -458,7 +564,6 @@
   }
   function CheckBoxMissionPart_init$lambda(this$CheckBoxMissionPart) {
     return function (f, new_0) {
-      print('observer invoked');
       if (new_0)
         this$CheckBoxMissionPart.score.update_trkh7z$(this$CheckBoxMissionPart.completionScore);
       else
@@ -673,6 +778,31 @@
       new MapIntIntSerializer();
     }
     return MapIntIntSerializer_instance;
+  }
+  function PolyModules() {
+    PolyModules_instance = this;
+    this.missionPart = SerializersModule(PolyModules$missionPart$lambda);
+  }
+  function PolyModules$missionPart$lambda$lambda($receiver) {
+    $receiver.with_kmpi2j$(getKClass(CheckBoxMissionPart), CheckBoxMissionPart$Companion_getInstance().serializer());
+    $receiver.with_kmpi2j$(getKClass(SliderMissionPart), SliderMissionPart$Companion_getInstance().serializer());
+    return Unit;
+  }
+  function PolyModules$missionPart$lambda($receiver) {
+    $receiver.polymorphic_myr6su$(getKClass(MissionPart), [], PolyModules$missionPart$lambda$lambda);
+    return Unit;
+  }
+  PolyModules.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'PolyModules',
+    interfaces: []
+  };
+  var PolyModules_instance = null;
+  function PolyModules_getInstance() {
+    if (PolyModules_instance === null) {
+      new PolyModules();
+    }
+    return PolyModules_instance;
   }
   function SerializationHelper(clazz, map, creator) {
     this.map = map;
@@ -951,6 +1081,40 @@
     state.observe_e2wk6p$(bindToInputTextField$lambda_0(stringFromT, $receiver));
     return $receiver;
   }
+  function FileUtil() {
+    FileUtil_instance = this;
+  }
+  function FileUtil$loadJSON$lambda(closure$xobj, closure$onResponse) {
+    return function (it) {
+      console.log('on ready');
+      console.log(' ' + closure$xobj.readyState + '  ' + closure$xobj.status);
+      if (closure$xobj.readyState === toShort(4) && closure$xobj.status === toShort(200)) {
+        console.log('', closure$xobj.response);
+        closure$onResponse(closure$xobj.response);
+      }
+      return Unit;
+    };
+  }
+  FileUtil.prototype.loadJSON_a1vqyy$ = function (path, onResponse) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType('application/json');
+    xobj.responseType = 'json';
+    xobj.open('GET', path, true);
+    xobj.onreadystatechange = FileUtil$loadJSON$lambda(xobj, onResponse);
+    xobj.send(null);
+  };
+  FileUtil.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'FileUtil',
+    interfaces: []
+  };
+  var FileUtil_instance = null;
+  function FileUtil_getInstance() {
+    if (FileUtil_instance === null) {
+      new FileUtil();
+    }
+    return FileUtil_instance;
+  }
   $$importsForInline$$['fll-score-app'] = _;
   var package$factory = _.factory || (_.factory = {});
   Object.defineProperty(package$factory, 'HtmlFactory', {
@@ -961,6 +1125,9 @@
   });
   var package$mission = _.mission || (_.mission = {});
   package$mission.Challenge = Challenge;
+  Object.defineProperty(Mission, 'Companion', {
+    get: Mission$Companion_getInstance
+  });
   package$mission.Mission = Mission;
   package$mission.MissionPart = MissionPart;
   package$mission.main_kand9s$ = main;
@@ -979,6 +1146,9 @@
   Object.defineProperty(package$serialization, 'MapIntIntSerializer', {
     get: MapIntIntSerializer_getInstance
   });
+  Object.defineProperty(package$serialization, 'PolyModules', {
+    get: PolyModules_getInstance
+  });
   package$serialization.SerializationHelper = SerializationHelper;
   package$serialization.HelperHolder = HelperHolder;
   Object.defineProperty(State, 'Companion', {
@@ -992,6 +1162,12 @@
   package$state.bindToInputCheckBox_m14o6e$ = bindToInputCheckBox;
   package$state.bindToInputRange_fcy6pt$ = bindToInputRange;
   package$state.bindToInputTextField_3kfxms$ = bindToInputTextField;
+  var package$util = _.util || (_.util = {});
+  Object.defineProperty(package$util, 'FileUtil', {
+    get: FileUtil_getInstance
+  });
+  Challenge$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
+  Mission$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   CheckBoxMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   SliderMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   MapIntIntSerializer.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
