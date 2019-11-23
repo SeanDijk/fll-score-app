@@ -1,6 +1,7 @@
 package mission
 
 import kotlinx.serialization.*
+import mission.parts.ExtraPointsForAllCompletedMissionsMissionPart
 import serialization.HelperHolder
 import serialization.SerializationHelper
 import state.State
@@ -12,11 +13,19 @@ class Challenge(
     val missions: List<Mission>
 ) {
     val totalChallengeScore = State(0)
+    // Counter for all missions where there are more than 0 points scored
+
 
     init {
-        missions.forEach {
-            it.totalScore.observe { previous, new ->
+        missions.forEach { mission ->
+            mission.totalScore.observe { previous, new ->
                 totalChallengeScore.update(totalChallengeScore.getCurrentState() + new - previous)
+            }
+
+            mission.missionParts.forEach { part ->
+                if(part is ExtraPointsForAllCompletedMissionsMissionPart) {
+                    part.initialize(mission, missions)
+                }
             }
         }
     }

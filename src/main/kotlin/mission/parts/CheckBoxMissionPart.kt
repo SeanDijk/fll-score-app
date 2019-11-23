@@ -9,7 +9,7 @@ import state.State
 import state.StateSerializer
 
 @Serializable
-@SerialName("CheckBoxMissionPart")
+@SerialName("CheckBox")
 class CheckBoxMissionPart(val description: String, val completionScore: Int): MissionPart {
     override fun getScore() = score
 

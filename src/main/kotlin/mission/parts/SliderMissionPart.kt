@@ -9,7 +9,7 @@ import state.State
 import state.StateSerializer
 
 @Serializable
-@SerialName("SliderMissionPart")
+@SerialName("Slider")
 class SliderMissionPart(val description: String,
                         val min: Int,
                         val max: Int,

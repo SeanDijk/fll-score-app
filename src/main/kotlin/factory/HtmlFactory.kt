@@ -10,7 +10,7 @@ import mission.Challenge
 import mission.Mission
 import mission.MissionPart
 import mission.parts.CheckBoxMissionPart
-import mission.parts.ExtraPointsForAllCompletedMissionPart
+import mission.parts.ExtraPointsForAllCompletedMissionsMissionPart
 import mission.parts.SliderMissionPart
 import org.w3c.dom.HTMLElement
 import state.bindTo
@@ -44,7 +44,8 @@ object HtmlFactory {
         when (missionPart::class) {
             CheckBoxMissionPart::class -> createFor(missionPart as CheckBoxMissionPart)
             SliderMissionPart::class -> createFor(missionPart as SliderMissionPart)
-            else -> throw RuntimeException("MissionPart type not implemented in factory: " + missionPart::class)
+            ExtraPointsForAllCompletedMissionsMissionPart::class -> createFor(missionPart as ExtraPointsForAllCompletedMissionsMissionPart)
+            else -> throw RuntimeException("MissionPart type not implemented in HtmlFactory: " + missionPart::class)
         }
 
     }
@@ -77,12 +78,12 @@ object HtmlFactory {
         }
     }
 
-    private fun TagConsumer<HTMLElement>.createFor(missionPart: ExtraPointsForAllCompletedMissionPart) {
+    private fun TagConsumer<HTMLElement>.createFor(missionPart: ExtraPointsForAllCompletedMissionsMissionPart) {
         div("flex-row mission-row") {
             span { +missionPart.description }
             input {
                 type = InputType.checkBox
-            }.bindTo(missionPart.completed)
+            }.bindTo(missionPart.enabled)
         }
     }
 

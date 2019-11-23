@@ -2,6 +2,17 @@
   "name": "Challenge 2019",
   "missions": [
     {
+      "name": "Advantage",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "ExtraPointsForAllCompletedMissionsMissionPart",
+          "description": "Hello world!",
+          "scorePerCompletion": 5
+        }
+      ]
+    },
+    {
       "name": "M01 - Elevated Places",
       "description": "",
       "missionParts": [
