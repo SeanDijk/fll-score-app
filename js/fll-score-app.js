@@ -367,8 +367,10 @@
   function Challenge$Companion$helper$lambda_2(it) {
     var tmp$, tmp$_0;
     var $receiver = new Challenge(typeof (tmp$ = it.get_11rb$('name')) === 'string' ? tmp$ : throwCCE(), Kotlin.isType(tmp$_0 = it.get_11rb$('missions'), List) ? tmp$_0 : throwCCE());
-    var tmp$_1;
-    $receiver.totalChallengeScore.update_trkh7z$((Kotlin.isType(tmp$_1 = it.get_11rb$('totalChallengeScore'), State) ? tmp$_1 : throwCCE()).getCurrentState());
+    var tmp$_1, tmp$_2;
+    if ((tmp$_2 = (tmp$_1 = it.get_11rb$('totalChallengeScore')) != null ? tmp$_1 : null) != null) {
+      $receiver.totalChallengeScore.update_trkh7z$(tmp$_2.getCurrentState());
+    }
     return $receiver;
   }
   Challenge$Companion.$metadata$ = {
@@ -441,8 +443,10 @@
   function Mission$Companion$helper$lambda_3(it) {
     var tmp$, tmp$_0, tmp$_1;
     var $receiver = new Mission(typeof (tmp$ = it.get_11rb$('name')) === 'string' ? tmp$ : throwCCE(), typeof (tmp$_0 = it.get_11rb$('description')) === 'string' ? tmp$_0 : throwCCE(), Kotlin.isType(tmp$_1 = it.get_11rb$('missionParts'), List) ? tmp$_1 : throwCCE());
-    var tmp$_2;
-    $receiver.totalScore.update_trkh7z$((Kotlin.isType(tmp$_2 = it.get_11rb$('totalScore'), State) ? tmp$_2 : throwCCE()).getCurrentState());
+    var tmp$_2, tmp$_3;
+    if ((tmp$_3 = (tmp$_2 = it.get_11rb$('totalScore')) != null ? tmp$_2 : null) != null) {
+      $receiver.totalScore.update_trkh7z$(tmp$_3.getCurrentState());
+    }
     return $receiver;
   }
   Mission$Companion.$metadata$ = {
@@ -543,11 +547,13 @@
   function CheckBoxMissionPart$Companion$helper$lambda_3(it) {
     var tmp$, tmp$_0;
     var $receiver = new CheckBoxMissionPart(typeof (tmp$ = it.get_11rb$('description')) === 'string' ? tmp$ : throwCCE(), typeof (tmp$_0 = it.get_11rb$('completionScore')) === 'number' ? tmp$_0 : throwCCE());
-    var tmp$_1, tmp$_2;
-    var completed1 = (Kotlin.isType(tmp$_1 = it.get_11rb$('completed'), State) ? tmp$_1 : throwCCE()).getCurrentState();
-    var score1 = (Kotlin.isType(tmp$_2 = it.get_11rb$('score'), State) ? tmp$_2 : throwCCE()).getCurrentState();
-    $receiver.completed.update_trkh7z$(completed1);
-    $receiver.score.update_trkh7z$(score1);
+    var tmp$_1, tmp$_2, tmp$_3, tmp$_4;
+    if ((tmp$_2 = (tmp$_1 = it.get_11rb$('completed')) != null ? tmp$_1 : null) != null) {
+      $receiver.completed.update_trkh7z$(tmp$_2.getCurrentState());
+    }
+    if ((tmp$_4 = (tmp$_3 = it.get_11rb$('score')) != null ? tmp$_3 : null) != null) {
+      $receiver.score.update_trkh7z$(tmp$_4.getCurrentState());
+    }
     return $receiver;
   }
   CheckBoxMissionPart$Companion.$metadata$ = {
@@ -687,11 +693,13 @@
   function SliderMissionPart$Companion$helper$lambda_5(it) {
     var tmp$, tmp$_0, tmp$_1, tmp$_2;
     var $receiver = new SliderMissionPart(typeof (tmp$ = it.get_11rb$('description')) === 'string' ? tmp$ : throwCCE(), typeof (tmp$_0 = it.get_11rb$('min')) === 'number' ? tmp$_0 : throwCCE(), typeof (tmp$_1 = it.get_11rb$('max')) === 'number' ? tmp$_1 : throwCCE(), Kotlin.isType(tmp$_2 = it.get_11rb$('scoreMap'), Map) ? tmp$_2 : throwCCE());
-    var tmp$_3, tmp$_4;
-    var value1 = (Kotlin.isType(tmp$_3 = it.get_11rb$('value'), State) ? tmp$_3 : throwCCE()).getCurrentState();
-    var score1 = (Kotlin.isType(tmp$_4 = it.get_11rb$('score'), State) ? tmp$_4 : throwCCE()).getCurrentState();
-    $receiver.value.update_trkh7z$(value1);
-    $receiver.score.update_trkh7z$(score1);
+    var tmp$_3, tmp$_4, tmp$_5, tmp$_6;
+    if ((tmp$_4 = (tmp$_3 = it.get_11rb$('value')) != null ? tmp$_3 : null) != null) {
+      $receiver.value.update_trkh7z$(tmp$_4.getCurrentState());
+    }
+    if ((tmp$_6 = (tmp$_5 = it.get_11rb$('score')) != null ? tmp$_5 : null) != null) {
+      $receiver.score.update_trkh7z$(tmp$_6.getCurrentState());
+    }
     return $receiver;
   }
   SliderMissionPart$Companion.$metadata$ = {
