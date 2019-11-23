@@ -30,7 +30,7 @@
   var toString = Kotlin.toString;
   var RuntimeException_init = Kotlin.kotlin.RuntimeException_init_pdl1vj$;
   var InputType = $module$kotlinx_html_js.kotlinx.html.InputType;
-  var input = $module$kotlinx_html_js.kotlinx.html.js.input_x8a5sv$;
+  var input_0 = $module$kotlinx_html_js.kotlinx.html.js.input_x8a5sv$;
   var Boolean_0 = Boolean;
   var PrimitiveClasses$booleanClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.booleanClass;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
@@ -52,6 +52,12 @@
   var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
   var kotlin_js_internal_BooleanCompanionObject = Kotlin.kotlin.js.internal.BooleanCompanionObject;
   var serializer_1 = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_jtjczu$;
+  var throwUPAE = Kotlin.throwUPAE;
+  var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
+  var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
+  var UnknownFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.UnknownFieldException;
+  var GeneratedSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.GeneratedSerializer;
+  var MissingFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.MissingFieldException;
   var Map = Kotlin.kotlin.collections.Map;
   var IntRange = Kotlin.kotlin.ranges.IntRange;
   var asSequence = Kotlin.kotlin.collections.asSequence_7wnvza$;
@@ -59,7 +65,6 @@
   var map = Kotlin.kotlin.sequences.map_z5avom$;
   var toMap = Kotlin.kotlin.collections.toMap_ah2ab9$;
   var IllegalStateException_init = Kotlin.kotlin.IllegalStateException_init_pdl1vj$;
-  var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
   var get_map = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.get_map_kgqhr1$;
   var withName = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.withName_8new1j$;
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
@@ -67,7 +72,6 @@
   var SerializersModule = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.modules.SerializersModule_q4tcel$;
   var SerializationException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.SerializationException;
   var ensureNotNull = Kotlin.ensureNotNull;
-  var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
   var Any = Object;
   var LinkedHashMap_init_0 = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
@@ -150,7 +154,7 @@
     div($receiver, 'flex-column', HtmlFactory$createFor$lambda_0(mission, $receiver, this));
   };
   HtmlFactory.prototype.createFor_b8g645$ = function ($receiver, missionPart) {
-    var tmp$, tmp$_0, tmp$_1;
+    var tmp$, tmp$_0, tmp$_1, tmp$_2;
     tmp$ = Kotlin.getKClassFromExpression(missionPart);
     if (equals(tmp$, getKClass(CheckBoxMissionPart))) {
       this.createFor_0($receiver, Kotlin.isType(tmp$_0 = missionPart, CheckBoxMissionPart) ? tmp$_0 : throwCCE());
@@ -158,8 +162,11 @@
      else if (equals(tmp$, getKClass(SliderMissionPart))) {
       this.createFor_1($receiver, Kotlin.isType(tmp$_1 = missionPart, SliderMissionPart) ? tmp$_1 : throwCCE());
     }
+     else if (equals(tmp$, getKClass(ExtraPointsForAllCompletedMissionsMissionPart))) {
+      this.createFor_2($receiver, Kotlin.isType(tmp$_2 = missionPart, ExtraPointsForAllCompletedMissionsMissionPart) ? tmp$_2 : throwCCE());
+    }
      else
-      throw RuntimeException_init('MissionPart type not implemented in factory: ' + toString(Kotlin.getKClassFromExpression(missionPart)));
+      throw RuntimeException_init('MissionPart type not implemented in HtmlFactory: ' + toString(Kotlin.getKClassFromExpression(missionPart)));
   };
   function HtmlFactory$createFor$lambda$lambda_1(closure$missionPart) {
     return function ($receiver) {
@@ -174,7 +181,7 @@
   function HtmlFactory$createFor$lambda_1(closure$missionPart, this$createFor) {
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_1(closure$missionPart));
-      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_2);
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_2);
       var state = closure$missionPart.completed;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1;
@@ -230,7 +237,7 @@
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_3(closure$missionPart));
       div(this$createFor, 'flex-filler', HtmlFactory$createFor$lambda$lambda_4);
-      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
       var state = closure$missionPart.value;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1;
@@ -249,7 +256,7 @@
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
       }
        while (false);
-      var $receiver_1 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
+      var $receiver_1 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
       var state_0 = closure$missionPart.value;
       bindTo$break: do {
         var tmp$_2, tmp$_3, tmp$_4;
@@ -287,8 +294,8 @@
   function HtmlFactory$createFor$lambda_3(closure$missionPart, this$createFor) {
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_7(closure$missionPart));
-      var $receiver_0 = input(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_8);
-      var state = closure$missionPart.completed;
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_8);
+      var state = closure$missionPart.enabled;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1;
         if (equals($receiver_0.type, InputType.checkBox.realValue) && ((tmp$ = PrimitiveClasses$booleanClass) != null ? tmp$.equals(PrimitiveClasses$booleanClass) : null)) {
@@ -334,6 +341,14 @@
     while (tmp$.hasNext()) {
       var element = tmp$.next();
       element.totalScore.observe_e2wk6p$(Challenge_init$lambda$lambda(this));
+      var tmp$_0;
+      tmp$_0 = element.missionParts.iterator();
+      while (tmp$_0.hasNext()) {
+        var element_0 = tmp$_0.next();
+        if (Kotlin.isType(element_0, ExtraPointsForAllCompletedMissionsMissionPart)) {
+          element_0.initialize_rcovp7$(element, this.missions);
+        }
+      }
     }
   }
   function Challenge$Companion() {
@@ -481,7 +496,8 @@
   };
   function main$lambda$lambda$lambda(closure$json, this$) {
     return function (it) {
-      HtmlFactory_getInstance().createFor_8dmwun$(this$, closure$json.parse_awif5v$(Challenge$Companion_getInstance().serializer(), JSON.stringify(it)));
+      var challenge = closure$json.parse_awif5v$(Challenge$Companion_getInstance().serializer(), JSON.stringify(it));
+      HtmlFactory_getInstance().createFor_8dmwun$(this$, challenge);
       return Unit;
     };
   }
@@ -500,6 +516,7 @@
   function main(args) {
     println('Hello JavaScript!');
     var json = new Json(void 0, PolyModules_getInstance().missionPart);
+    console.log('', PolyModules_getInstance().missionPart);
     window.onload = main$lambda(json);
   }
   function CheckBoxMissionPart(description, completionScore) {
@@ -582,55 +599,213 @@
     simpleName: 'CheckBoxMissionPart',
     interfaces: [MissionPart]
   };
-  function ExtraPointsForAllCompletedMissionPart(description, scorePerCompletion, myMission, missions) {
+  function ExtraPointsForAllCompletedMissionsMissionPart(description, scorePerCompletion) {
+    ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance();
     this.description = description;
     this.scorePerCompletion = scorePerCompletion;
-    this.myMission = myMission;
-    this.missions = missions;
-    this.score = new State(0);
+    this.missions_4ocfqr$_0 = this.missions_4ocfqr$_0;
+    this.myMission_dop65c$_0 = this.myMission_dop65c$_0;
+    this.score_0 = new State(0);
     this.backingScore_0 = 0;
-    this.completed = new State(false);
-    this.completed.observe_e2wk6p$(ExtraPointsForAllCompletedMissionPart_init$lambda(this));
+    this.enabled = new State(false);
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart.prototype.getScore = function () {
+    return this.score_0;
+  };
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart.prototype, 'missions_0', {
+    get: function () {
+      if (this.missions_4ocfqr$_0 == null)
+        return throwUPAE('missions');
+      return this.missions_4ocfqr$_0;
+    },
+    set: function (missions) {
+      this.missions_4ocfqr$_0 = missions;
+    }
+  });
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart.prototype, 'myMission_0', {
+    get: function () {
+      if (this.myMission_dop65c$_0 == null)
+        return throwUPAE('myMission');
+      return this.myMission_dop65c$_0;
+    },
+    set: function (myMission) {
+      this.myMission_dop65c$_0 = myMission;
+    }
+  });
+  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
+    return function (previous, new_0) {
+      if (new_0) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
+      }
+       else {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(0);
+      }
+      return Unit;
+    };
+  }
+  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
+    return function (previous, new_0) {
+      if (previous === 0 && new_0 > 0) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 + this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
+      }
+       else if (previous > 0 && new_0 === 0) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 - this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
+      }
+      if (this$ExtraPointsForAllCompletedMissionsMissionPart.enabled.getCurrentState()) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
+      }
+      return Unit;
+    };
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart.prototype.initialize_rcovp7$ = function (myMission, missions) {
+    this.myMission_0 = myMission;
+    this.missions_0 = missions;
+    this.enabled.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda(this));
     var tmp$;
-    tmp$ = this.missions.iterator();
+    tmp$ = missions.iterator();
     loop_label: while (tmp$.hasNext()) {
       var element = tmp$.next();
       action$break: do {
-        if (equals(element, this.myMission))
+        if (equals(element, myMission))
           break action$break;
-        element.totalScore.observe_e2wk6p$(ExtraPointsForAllCompletedMissionPart_init$lambda$lambda(this));
+        element.totalScore.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this));
       }
        while (false);
     }
-  }
-  ExtraPointsForAllCompletedMissionPart.prototype.getScore = function () {
-    return this.score;
   };
-  function ExtraPointsForAllCompletedMissionPart_init$lambda(this$ExtraPointsForAllCompletedMissionPart) {
-    return function (previous, new_0) {
-      if (new_0) {
-        this$ExtraPointsForAllCompletedMissionPart.score.update_trkh7z$(this$ExtraPointsForAllCompletedMissionPart.backingScore_0);
-      }
-       else {
-        this$ExtraPointsForAllCompletedMissionPart.score.update_trkh7z$(0);
-      }
-      return Unit;
-    };
+  function ExtraPointsForAllCompletedMissionsMissionPart$Companion() {
+    ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = this;
   }
-  function ExtraPointsForAllCompletedMissionPart_init$lambda$lambda(this$ExtraPointsForAllCompletedMissionPart) {
-    return function (previous, new_0) {
-      if (previous === 0 && new_0 > 0) {
-        this$ExtraPointsForAllCompletedMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionPart.backingScore_0 + this$ExtraPointsForAllCompletedMissionPart.scorePerCompletion | 0;
-      }
-       else if (previous > 0 && new_0 === 0) {
-        this$ExtraPointsForAllCompletedMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionPart.backingScore_0 - this$ExtraPointsForAllCompletedMissionPart.scorePerCompletion | 0;
-      }
-      return Unit;
-    };
+  ExtraPointsForAllCompletedMissionsMissionPart$Companion.prototype.serializer = function () {
+    return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance();
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = null;
+  function ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance() {
+    if (ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance === null) {
+      new ExtraPointsForAllCompletedMissionsMissionPart$Companion();
+    }
+    return ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance;
   }
-  ExtraPointsForAllCompletedMissionPart.$metadata$ = {
+  function ExtraPointsForAllCompletedMissionsMissionPart$$serializer() {
+    this.descriptor_kb16z1$_0 = new SerialClassDescImpl('ExtraPointsForAllCompletedMissionsMissionPart', this);
+    this.descriptor.addElement_ivxn3r$('description', false);
+    this.descriptor.addElement_ivxn3r$('scorePerCompletion', false);
+    this.descriptor.addElement_ivxn3r$('score', true);
+    this.descriptor.addElement_ivxn3r$('backingScore', true);
+    this.descriptor.addElement_ivxn3r$('enabled', true);
+    ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance = this;
+  }
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype, 'descriptor', {
+    get: function () {
+      return this.descriptor_kb16z1$_0;
+    }
+  });
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
+    var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
+    output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.description);
+    output.encodeIntElement_4wpqag$(this.descriptor, 1, obj.scorePerCompletion);
+    if (!equals(obj.score_0, new State(0)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 2))
+      output.encodeSerializableElement_blecud$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), obj.score_0);
+    if (!equals(obj.backingScore_0, 0) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 3))
+      output.encodeIntElement_4wpqag$(this.descriptor, 3, obj.backingScore_0);
+    if (!equals(obj.enabled, new State(false)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 4))
+      output.encodeSerializableElement_blecud$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), obj.enabled);
+    output.endStructure_qatsm0$(this.descriptor);
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
+    var index, readAll = false;
+    var bitMask0 = 0;
+    var local0
+    , local1
+    , local2
+    , local3
+    , local4;
+    var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
+    loopLabel: while (true) {
+      index = input.decodeElementIndex_qatsm0$(this.descriptor);
+      switch (index) {
+        case -2:
+          readAll = true;
+        case 0:
+          local0 = input.decodeStringElement_3zr2iy$(this.descriptor, 0);
+          bitMask0 |= 1;
+          if (!readAll)
+            break;
+        case 1:
+          local1 = input.decodeIntElement_3zr2iy$(this.descriptor, 1);
+          bitMask0 |= 2;
+          if (!readAll)
+            break;
+        case 2:
+          local2 = (bitMask0 & 4) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 2, new StateSerializer(internal.IntSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), local2);
+          bitMask0 |= 4;
+          if (!readAll)
+            break;
+        case 3:
+          local3 = input.decodeIntElement_3zr2iy$(this.descriptor, 3);
+          bitMask0 |= 8;
+          if (!readAll)
+            break;
+        case 4:
+          local4 = (bitMask0 & 16) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), local4);
+          bitMask0 |= 16;
+          if (!readAll)
+            break;
+        case -1:
+          break loopLabel;
+        default:throw new UnknownFieldException(index);
+      }
+    }
+    input.endStructure_qatsm0$(this.descriptor);
+    return ExtraPointsForAllCompletedMissionsMissionPart_init(bitMask0, local0, local1, local2, local3, local4, null);
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.childSerializers = function () {
+    return [internal.StringSerializer, internal.IntSerializer, new StateSerializer(internal.IntSerializer), internal.IntSerializer, new StateSerializer(internal.BooleanSerializer)];
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: '$serializer',
+    interfaces: [GeneratedSerializer]
+  };
+  var ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance = null;
+  function ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance() {
+    if (ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance === null) {
+      new ExtraPointsForAllCompletedMissionsMissionPart$$serializer();
+    }
+    return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance;
+  }
+  function ExtraPointsForAllCompletedMissionsMissionPart_init(seen1, description, scorePerCompletion, score, backingScore, enabled, serializationConstructorMarker) {
+    var $this = serializationConstructorMarker || Object.create(ExtraPointsForAllCompletedMissionsMissionPart.prototype);
+    if ((seen1 & 1) === 0)
+      throw new MissingFieldException('description');
+    else
+      $this.description = description;
+    if ((seen1 & 2) === 0)
+      throw new MissingFieldException('scorePerCompletion');
+    else
+      $this.scorePerCompletion = scorePerCompletion;
+    if ((seen1 & 4) === 0)
+      $this.score_0 = new State(0);
+    else
+      $this.score_0 = score;
+    if ((seen1 & 8) === 0)
+      $this.backingScore_0 = 0;
+    else
+      $this.backingScore_0 = backingScore;
+    if ((seen1 & 16) === 0)
+      $this.enabled = new State(false);
+    else
+      $this.enabled = enabled;
+    return $this;
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart.$metadata$ = {
     kind: Kind_CLASS,
-    simpleName: 'ExtraPointsForAllCompletedMissionPart',
+    simpleName: 'ExtraPointsForAllCompletedMissionsMissionPart',
     interfaces: [MissionPart]
   };
   function SliderMissionPart(description, min, max, scoreMap) {
@@ -794,6 +969,7 @@
   function PolyModules$missionPart$lambda$lambda($receiver) {
     $receiver.with_kmpi2j$(getKClass(CheckBoxMissionPart), CheckBoxMissionPart$Companion_getInstance().serializer());
     $receiver.with_kmpi2j$(getKClass(SliderMissionPart), SliderMissionPart$Companion_getInstance().serializer());
+    $receiver.with_kmpi2j$(getKClass(ExtraPointsForAllCompletedMissionsMissionPart), ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance().serializer());
     return Unit;
   }
   function PolyModules$missionPart$lambda($receiver) {
@@ -1144,7 +1320,14 @@
   });
   var package$parts = package$mission.parts || (package$mission.parts = {});
   package$parts.CheckBoxMissionPart = CheckBoxMissionPart;
-  package$parts.ExtraPointsForAllCompletedMissionPart = ExtraPointsForAllCompletedMissionPart;
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart, 'Companion', {
+    get: ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance
+  });
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart, '$serializer', {
+    get: ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance
+  });
+  package$parts.ExtraPointsForAllCompletedMissionsMissionPart_init_aka52o$ = ExtraPointsForAllCompletedMissionsMissionPart_init;
+  package$parts.ExtraPointsForAllCompletedMissionsMissionPart = ExtraPointsForAllCompletedMissionsMissionPart;
   Object.defineProperty(SliderMissionPart, 'Companion', {
     get: SliderMissionPart$Companion_getInstance
   });
@@ -1177,6 +1360,7 @@
   Challenge$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   Mission$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   CheckBoxMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   SliderMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   MapIntIntSerializer.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   SerializationHelper.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
