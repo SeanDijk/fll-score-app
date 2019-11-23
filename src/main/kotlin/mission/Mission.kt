@@ -37,9 +37,9 @@ class Mission(val name: String,
                 it["description"] as String,
                 it["missionParts"] as List<MissionPart>
             ).apply {
-                this.totalScore.update(
-                    (it["totalScore"] as State<Int>).getCurrentState()
-                )
+                it["totalScore"]?.unsafeCast<State<Int>>()?.let { x ->
+                    this.totalScore.update(x.getCurrentState())
+                }
             }
         }
 

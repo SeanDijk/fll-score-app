@@ -35,10 +35,12 @@ class CheckBoxMissionPart(val description: String, val completionScore: Int): Mi
             )
         ) {
             CheckBoxMissionPart(it["description"] as String, it["completionScore"] as Int).apply {
-                val completed1 = (it["completed"] as State<Boolean>).getCurrentState()
-                val score1 = (it["score"] as State<Int>).getCurrentState()
-                this.completed.update(completed1)
-                this.score.update(score1)
+                it["completed"]?.unsafeCast<State<Boolean>>()?.let { state ->
+                    this.completed.update(state.getCurrentState())
+                }
+                it["score"]?.unsafeCast<State<Int>>()?.let{ state ->
+                    this.score.update(state.getCurrentState())
+                }
             }
         }
 

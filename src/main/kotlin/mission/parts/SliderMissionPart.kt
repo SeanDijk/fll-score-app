@@ -50,11 +50,14 @@ class SliderMissionPart(val description: String,
                 it["max"] as Int,
                 it["scoreMap"] as Map<Int, Int>
             ).apply {
-                val value1 = (it["value"] as State<Int>).getCurrentState()
-                val score1 = (it["score"] as State<Int>).getCurrentState()
-                this.value.update(value1)
-                this.score.update(score1)
+                it["value"]?.unsafeCast<State<Int>>()?.let { state ->
+                    this.value.update(state.getCurrentState())
+                }
+                it["score"]?.unsafeCast<State<Int>>()?.let{ state ->
+                    this.score.update(state.getCurrentState())
+                }
             }
+
         }
 
         override val descriptor: SerialDescriptor = helper.descriptor

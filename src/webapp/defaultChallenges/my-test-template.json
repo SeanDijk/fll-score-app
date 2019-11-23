@@ -2,42 +2,47 @@
   "name": "Challenge 2019",
   "missions": [
     {
-      "name": "Mission 01",
-      "description": "This is the description of mission one",
+      "name": "M01 - Elevated Places",
+      "description": "",
       "missionParts": [
         {
           "type": "CheckBoxMissionPart",
-          "description": "Description 1",
-          "completionScore": 100,
-          "completed": false,
-          "score": 0
-        },
-        {
-          "type": "CheckBoxMissionPart",
-          "description": "Description 2",
-          "completionScore": 25,
-          "completed": false,
-          "score": 0
+          "description": "Is the robot supported by the Bridge?",
+          "completionScore": 20
         },
         {
           "type": "SliderMissionPart",
-          "description": "Description 3",
+          "description": "How many flags are clearly raised any distance, only by the robot?",
           "min": 0,
-          "max": 6,
+          "max": 2,
           "scoreMap": {
             "0": 0,
-            "1": 10,
-            "2": 20,
-            "3": 30,
-            "4": 40,
-            "5": 50,
-            "6": 60
-          },
-          "value": 0,
-          "score": 0
+            "1": 15,
+            "2": 30
+          }
         }
-      ],
-      "totalScore": 0
+      ]
+    },
+    {
+      "name": "M02 - Crane",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?",
+          "completionScore": 20
+        },
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "Is the Hooked Blue Unit independent and supported by another Blue Unit?",
+          "completionScore": 15
+        },
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "Is Level 1 Completely in the Blue Circle?",
+          "completionScore": 15
+        }
+      ]
     }
   ],
   "totalChallengeScore": 0

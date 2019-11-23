@@ -35,9 +35,9 @@ class Challenge(
                 it["name"] as String,
                 it["missions"] as List<Mission>
             ).apply {
-                this.totalChallengeScore.update(
-                    (it["totalChallengeScore"] as State<Int>).getCurrentState()
-                )
+                it["totalChallengeScore"]?.unsafeCast<State<Int>>()?.let { x ->
+                    this.totalChallengeScore.update(x.getCurrentState())
+                }
             }
         }
 
