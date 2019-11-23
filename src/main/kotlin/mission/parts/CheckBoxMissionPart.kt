@@ -9,6 +9,7 @@ import state.State
 import state.StateSerializer
 
 @Serializable
+@SerialName("CheckBoxMissionPart")
 class CheckBoxMissionPart(val description: String, val completionScore: Int): MissionPart {
     override fun getScore() = score
 
@@ -17,7 +18,6 @@ class CheckBoxMissionPart(val description: String, val completionScore: Int): Mi
 
     init {
         completed.observe { _, new ->
-            print("observer invoked")
             if (new) score.update(completionScore)
             else score.update(0)
         }

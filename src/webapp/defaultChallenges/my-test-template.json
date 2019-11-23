@@ -1,42 +1,44 @@
 {
-  "name": "Challenge name",
+  "name": "Challenge 2019",
   "missions": [
     {
-      "id": "M00",
-      "name": "Advantage",
-      "description": "Get 5 additional points for every mission with a score > 0",
+      "name": "Mission 01",
+      "description": "This is the description of mission one",
       "missionParts": [
         {
-          "type": "ExtraPointsForAllCompleted",
-          "description": ":)",
-          "scorePerCompletion": 5
-        }
-      ]
-    },
-    {
-      "id": "M01",
-      "name": "M01 — Name",
-      "description": "This is the description of the mission.",
-      "missionParts": [
-        {
-          "type": "checkbox",
-          "description": "This is the description of the missionpart",
-          "completionScore": 20
+          "type": "CheckBoxMissionPart",
+          "description": "Description 1",
+          "completionScore": 100,
+          "completed": false,
+          "score": 0
         },
         {
-          "type": "slider",
-          "min": 0,
-          "max": 10,
-          "scoreType": "default",
+          "type": "CheckBoxMissionPart",
+          "description": "Description 2",
+          "completionScore": 25,
+          "completed": false,
+          "score": 0
         },
         {
-          "type": "slider",
+          "type": "SliderMissionPart",
+          "description": "Description 3",
           "min": 0,
-          "max": 3,
-          "scoreType": "map",
-          "scoreMap": [5, 15, 30, 50]
+          "max": 6,
+          "scoreMap": {
+            "0": 0,
+            "1": 10,
+            "2": 20,
+            "3": 30,
+            "4": 40,
+            "5": 50,
+            "6": 60
+          },
+          "value": 0,
+          "score": 0
         }
-      ]
+      ],
+      "totalScore": 0
     }
-  ]
+  ],
+  "totalChallengeScore": 0
 }

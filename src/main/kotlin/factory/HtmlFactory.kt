@@ -2,6 +2,7 @@ package factory
 
 import kotlinx.html.InputType
 import kotlinx.html.TagConsumer
+import kotlinx.html.h1
 import kotlinx.html.js.div
 import kotlinx.html.js.input
 import kotlinx.html.js.span
@@ -19,17 +20,19 @@ object HtmlFactory {
 
     fun TagConsumer<HTMLElement>.createFor(challenge: Challenge) {
         div("flex-column") {
+            h1 { +challenge.name }
             challenge.missions.forEach {
                 createFor(it)
             }
         }
     }
 
+
     fun TagConsumer<HTMLElement>.createFor(mission: Mission) {
         div("flex-column") {
             div("flex-row mission-header") {
-                span { +mission.name}
-                span {  }.bindTo(mission.totalScore)
+                span { +mission.name }
+                span { }.bindTo(mission.totalScore)
             }
             mission.missionParts.forEach {
                 createFor(it)
@@ -38,7 +41,7 @@ object HtmlFactory {
     }
 
     fun TagConsumer<HTMLElement>.createFor(missionPart: MissionPart) {
-        when(missionPart::class) {
+        when (missionPart::class) {
             CheckBoxMissionPart::class -> createFor(missionPart as CheckBoxMissionPart)
             SliderMissionPart::class -> createFor(missionPart as SliderMissionPart)
             else -> throw RuntimeException("MissionPart type not implemented in factory: " + missionPart::class)
