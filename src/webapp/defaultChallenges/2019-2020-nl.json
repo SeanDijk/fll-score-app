@@ -1,0 +1,120 @@
+{
+  "name": "Challenge 2019",
+  "missions": [
+    {
+      "name": "Voordeel",
+      "description": "http://firstlegoleague.nl/wp-content/uploads/2019/09/CITY-SHAPER-Official-Scoreheet.pdf",
+      "missionParts": [
+        {
+          "type": "ExtraPointsForAllCompletedMissionsMissionPart",
+          "description": "De robot en uitrusting past in het kleine inspectiegebied",
+          "scorePerCompletion": 5
+        }
+      ]
+    },
+    {
+      "name": "M01 - Verhoogde Plaatsen",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De robot wordt ondersteund door de brug",
+          "completionScore": 20
+        },
+        {
+          "type": "SliderMissionPart",
+          "description": "Aantal duidelijk op enige afstand opgeheven vlaggen, alleen door de robot",
+          "min": 0,
+          "max": 2,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30
+          }
+        }
+      ]
+    },
+    {
+      "name": "M02 - Hijskraan",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De aangehaakte blauwe unit is duidelijk verlaagd op enige afstand van het geleidegat",
+          "completionScore": 20
+        },
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De aangehaakte blauwe unit is onafhankelijk en wordt ondersteund door een andere blauwe unit",
+          "completionScore": 15
+        },
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "EN niveau 1 is volledig in de blauwe cirkel",
+          "completionScore": 15
+        }
+      ]
+    },
+    {
+      "name": "M03 - Inspectie Drone",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De inspectie drone wordt ondersteund door de as op de brug",
+          "completionScore": 20
+        }
+      ]
+    },
+    {
+      "name": "M04 - Ontwerp voor dieren in het wild",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De vleermuis wordt ondersteund door de boomtak",
+          "completionScore": 20
+        }
+      ]
+    },
+    {
+      "name": "M05 - Boomhut",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "SliderMissionPart",
+          "description": "Aantal units dat onafhankelijk is en wordt ondersteund\ndoor de grote boomtakken",
+          "min": 0,
+          "max": 2,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30
+          }
+        },
+        {
+          "type": "SliderMissionPart",
+          "description": "Aantal units dat onafhankeljik is en wordt ondersteund\ndoor de kleine boomtakken",
+          "min": 0,
+          "max": 2,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30
+          }
+        }
+      ]
+    },{
+      "name": "M06 - Verkeersopstopping",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De verkeersopstopping staat omhoog, zijn bewegende deel is onafhankelijk en alleen ondersteund door zijn scharnieren",
+          "completionScore": 20
+        }
+      ]
+    }
+  ],
+  "totalChallengeScore": 0
+}
