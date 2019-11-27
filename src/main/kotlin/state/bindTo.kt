@@ -1,6 +1,7 @@
 package state
 
 import kotlinx.html.InputType
+import mission.parts.MultipleChoiceMissionPart.*
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.HTMLSpanElement
@@ -31,8 +32,26 @@ inline fun <reified T: Any> HTMLInputElement.bindTo(state: State<T>): HTMLInputE
         return bindToInputRange(state.unsafeCast<State<Int>>())
     } else if (this.type == InputType.number.realValue && T::class == Int::class) {
         return bindToInputTextField(state, {s -> s.toInt() as T }, { t -> t.toString()})
+    } else if (this.type == InputType.radio.realValue && T::class == Int::class) {
+        return bindToRadioButton(state.unsafeCast<State<Int>>())
     }
     throw RuntimeException("Not defined how to bind to this type! type: $type")
+}
+
+/**
+ * For radio buttons we use the index of our choice list, since radio buttons are weird.
+ */
+fun HTMLInputElement.bindToRadioButton(state: State<Int>): HTMLInputElement {
+    this.onchange = { event ->
+        if (event.isTrusted && checked) {
+            state.update(this.value.toInt())
+        }
+    }
+    state.observe{_, new ->
+        if(new.toString() == this.value)
+            checked = true
+    }
+    return this
 }
 
 fun HTMLInputElement.bindToInputRange(state: State<Int>): HTMLInputElement {

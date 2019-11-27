@@ -104,7 +104,8 @@
           }
         }
       ]
-    },{
+    },
+    {
       "name": "M06 - Verkeersopstopping",
       "description": "",
       "missionParts": [
@@ -112,6 +113,185 @@
           "type": "CheckBoxMissionPart",
           "description": "De verkeersopstopping staat omhoog, zijn bewegende deel is onafhankelijk en alleen ondersteund door zijn scharnieren",
           "completionScore": 20
+        }
+      ]
+    },
+    {
+      "name": "M07 - Schommel",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De schommel is vrijgegeven",
+          "completionScore": 20
+        }
+      ]
+    },
+    {
+      "name": "M08 - Lift",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "MultipleChoiceMissionPart",
+          "description": "De bewegende delen van de lift zijn onafhankelijk en alleen ondersteund door zijn scharnieren, in de volgende positie",
+          "choices": [
+            { "choice": "Geen", "score":  0},
+            { "choice": "Blauwe wagen omlaag", "score":  10},
+            { "choice": "In evenwicht", "score":  20}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M09 - Veiligheidsfactor",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "Het testgebouw is onafhankelijk en wordt alleen ondersteund door de blauwe balken",
+          "completionScore": 20
+        },
+        {
+          "type": "SliderMissionPart",
+          "description": "Hoeveel balken zijn tenminste halverwege omgeduwd?",
+          "min": 0,
+          "max": 6,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30,
+            "3": 30,
+            "4": 30,
+            "5": 30,
+            "6": 30
+          }
+        }
+      ]
+    },
+    {
+      "name": "M10 - Staalconstructie",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De staalconstructie staat, en is onafhankelijk en wordt alleen ondersteund door zijn scharnieren",
+          "completionScore": 20
+        }
+      ]
+    },
+    {
+      "name": "M11 - Innovatieve architectuur",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "CheckBoxMissionPart",
+          "description": "De constructie is groter dan een blauwe gebouwunit en is gebouwd van de team’s witte LEGO stenen",
+          "completionScore": 20
+        },
+        {
+          "type": "MultipleChoiceMissionPart",
+          "description": "De schommel is vrijgegeven",
+          "choices": [
+            { "choice": "Nee", "score":  0},
+            { "choice": "Gedeeltelijk", "score":  10},
+            { "choice": "Volledig", "score":  20}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M12 - Ontwerp & bouw",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "SliderMissionPart",
+          "description": "Aantal cirkels met kleur overeenstemmende unit, vlak op de mat, en volledig in cirkel",
+          "min": 0,
+          "max": 3,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30,
+            "3": 30
+          }
+        },
+        {
+          "type": "SliderMissionPart",
+          "description": "Som van hoogteniveaus van onafhankeljik stapels, tenminste gedeeltelijk in een willekeurige cirkel",
+          "min": 0,
+          "max": 10,
+          "scoreMap": {
+            "0": 0,
+            "1": 5,
+            "2": 10,
+            "3": 15,
+            "4": 20,
+            "5": 25,
+            "6": 30,
+            "7": 35,
+            "8": 40,
+            "9": 45,
+            "10": 50,
+            "11": 55,
+            "12": 60,
+            "13": 65,
+            "14": 70,
+            "15": 75,
+            "16": 80,
+            "17": 85,
+            "18": 90,
+            "19": 95,
+            "20": 100,
+            "21": 105,
+            "22": 110,
+            "23": 115,
+            "24": 120,
+            "25": 125,
+            "26": 130,
+            "27": 135,
+            "28": 140,
+            "29": 145,
+            "30": 150
+          }
+        }
+      ]
+    },
+    {
+      "name": "M13 - Duurzaamheidupgrades",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "SliderMissionPart",
+          "description": "Aantal upgrades dat onafhankelijk is en alleen wordt ondersteund door een stapel die zich tenminste gedeeltelijk in een cirkel bevindt",
+          "min": 0,
+          "max": 3,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30,
+            "3": 30
+          }
+        }
+      ]
+    },
+    {
+      "name": "M14 - Precisie",
+      "description": "",
+      "missionParts": [
+        {
+          "type": "SliderMissionPart",
+          "description": "Aantal op het veld overgebleven precisietekens",
+          "min": 0,
+          "max": 6,
+          "scoreMap": {
+            "0": 0,
+            "1": 15,
+            "2": 30,
+            "3": 30,
+            "4": 30,
+            "5": 30,
+            "6": 30
+          }
         }
       ]
     }

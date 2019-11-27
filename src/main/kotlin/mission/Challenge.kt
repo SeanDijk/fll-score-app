@@ -1,7 +1,7 @@
 package mission
 
 import kotlinx.serialization.*
-import mission.parts.ExtraPointsForAllCompletedMissionsMissionPart
+import mission.parts.special.ExtraPointsForAllCompletedMissionsMissionPart
 import serialization.HelperHolder
 import serialization.SerializationHelper
 import state.State

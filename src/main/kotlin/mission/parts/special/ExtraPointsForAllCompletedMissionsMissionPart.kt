@@ -1,4 +1,4 @@
-package mission.parts
+package mission.parts.special
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
