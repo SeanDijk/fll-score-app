@@ -33,8 +33,11 @@
   var input_0 = $module$kotlinx_html_js.kotlinx.html.js.input_x8a5sv$;
   var Boolean_0 = Boolean;
   var PrimitiveClasses$booleanClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.booleanClass;
+  var hashCode = Kotlin.hashCode;
+  var label = $module$kotlinx_html_js.kotlinx.html.label_yd75js$;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
+  var checkIndexOverflow = Kotlin.kotlin.collections.checkIndexOverflow_za3lpa$;
   var kotlin_js_internal_StringCompanionObject = Kotlin.kotlin.js.internal.StringCompanionObject;
   var serializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_6eet4j$;
   var to = Kotlin.kotlin.to_ujzrz7$;
@@ -52,10 +55,9 @@
   var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
   var kotlin_js_internal_BooleanCompanionObject = Kotlin.kotlin.js.internal.BooleanCompanionObject;
   var serializer_1 = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_jtjczu$;
-  var throwUPAE = Kotlin.throwUPAE;
   var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
-  var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
   var UnknownFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.UnknownFieldException;
+  var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
   var GeneratedSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.GeneratedSerializer;
   var MissingFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.MissingFieldException;
   var Map = Kotlin.kotlin.collections.Map;
@@ -65,6 +67,7 @@
   var map = Kotlin.kotlin.sequences.map_z5avom$;
   var toMap = Kotlin.kotlin.collections.toMap_ah2ab9$;
   var IllegalStateException_init = Kotlin.kotlin.IllegalStateException_init_pdl1vj$;
+  var throwUPAE = Kotlin.throwUPAE;
   var get_map = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.get_map_kgqhr1$;
   var withName = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.withName_8new1j$;
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
@@ -154,7 +157,7 @@
     div($receiver, 'flex-column', HtmlFactory$createFor$lambda_0(mission, $receiver, this));
   };
   HtmlFactory.prototype.createFor_b8g645$ = function ($receiver, missionPart) {
-    var tmp$, tmp$_0, tmp$_1, tmp$_2;
+    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3;
     tmp$ = Kotlin.getKClassFromExpression(missionPart);
     if (equals(tmp$, getKClass(CheckBoxMissionPart))) {
       this.createFor_0($receiver, Kotlin.isType(tmp$_0 = missionPart, CheckBoxMissionPart) ? tmp$_0 : throwCCE());
@@ -162,8 +165,11 @@
      else if (equals(tmp$, getKClass(SliderMissionPart))) {
       this.createFor_1($receiver, Kotlin.isType(tmp$_1 = missionPart, SliderMissionPart) ? tmp$_1 : throwCCE());
     }
+     else if (equals(tmp$, getKClass(MultipleChoiceMissionPart))) {
+      this.createFor_2($receiver, Kotlin.isType(tmp$_2 = missionPart, MultipleChoiceMissionPart) ? tmp$_2 : throwCCE());
+    }
      else if (equals(tmp$, getKClass(ExtraPointsForAllCompletedMissionsMissionPart))) {
-      this.createFor_2($receiver, Kotlin.isType(tmp$_2 = missionPart, ExtraPointsForAllCompletedMissionsMissionPart) ? tmp$_2 : throwCCE());
+      this.createFor_3($receiver, Kotlin.isType(tmp$_3 = missionPart, ExtraPointsForAllCompletedMissionsMissionPart) ? tmp$_3 : throwCCE());
     }
      else
       throw RuntimeException_init('MissionPart type not implemented in HtmlFactory: ' + toString(Kotlin.getKClassFromExpression(missionPart)));
@@ -184,7 +190,7 @@
       var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_2);
       var state = closure$missionPart.completed;
       bindTo$break: do {
-        var tmp$, tmp$_0, tmp$_1;
+        var tmp$, tmp$_0, tmp$_1, tmp$_2;
         if (equals($receiver_0.type, InputType.checkBox.realValue) && ((tmp$ = PrimitiveClasses$booleanClass) != null ? tmp$.equals(PrimitiveClasses$booleanClass) : null)) {
           bindToInputCheckBox($receiver_0, state);
           break bindTo$break;
@@ -195,6 +201,10 @@
         }
          else if (equals($receiver_0.type, InputType.number.realValue) && ((tmp$_1 = PrimitiveClasses$booleanClass) != null ? tmp$_1.equals(PrimitiveClasses$intClass) : null)) {
           bindToInputTextField($receiver_0, state, bindTo$lambda_0(Boolean_0, Kotlin.isTypeOf('boolean')), bindTo$lambda_1);
+          break bindTo$break;
+        }
+         else if (equals($receiver_0.type, InputType.radio.realValue) && ((tmp$_2 = PrimitiveClasses$booleanClass) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
+          bindToRadioButton($receiver_0, state);
           break bindTo$break;
         }
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
@@ -212,10 +222,7 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_4($receiver) {
-    return Unit;
-  }
-  function HtmlFactory$createFor$lambda$lambda_5(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda$lambda_1(closure$missionPart) {
     return function ($receiver) {
       $receiver.type = InputType.number;
       $receiver.min = closure$missionPart.min.toString();
@@ -224,7 +231,7 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda$lambda_2(closure$missionPart) {
     return function ($receiver) {
       $receiver.type = InputType.range;
       $receiver.min = closure$missionPart.min.toString();
@@ -233,14 +240,12 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda_2(closure$missionPart, this$createFor) {
+  function HtmlFactory$createFor$lambda$lambda_4(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_3(closure$missionPart));
-      div(this$createFor, 'flex-filler', HtmlFactory$createFor$lambda$lambda_4);
-      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda_1(closure$missionPart));
       var state = closure$missionPart.value;
       bindTo$break: do {
-        var tmp$, tmp$_0, tmp$_1;
+        var tmp$, tmp$_0, tmp$_1, tmp$_2;
         if (equals($receiver_0.type, InputType.checkBox.realValue) && ((tmp$ = PrimitiveClasses$intClass) != null ? tmp$.equals(PrimitiveClasses$booleanClass) : null)) {
           bindToInputCheckBox($receiver_0, state);
           break bindTo$break;
@@ -253,23 +258,31 @@
           bindToInputTextField($receiver_0, state, bindTo$lambda_0(Int, Kotlin.isTypeOf('number')), bindTo$lambda_1);
           break bindTo$break;
         }
+         else if (equals($receiver_0.type, InputType.radio.realValue) && ((tmp$_2 = PrimitiveClasses$intClass) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
+          bindToRadioButton($receiver_0, state);
+          break bindTo$break;
+        }
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
       }
        while (false);
-      var $receiver_1 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
+      var $receiver_1 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda_2(closure$missionPart));
       var state_0 = closure$missionPart.value;
       bindTo$break: do {
-        var tmp$_2, tmp$_3, tmp$_4;
-        if (equals($receiver_1.type, InputType.checkBox.realValue) && ((tmp$_2 = PrimitiveClasses$intClass) != null ? tmp$_2.equals(PrimitiveClasses$booleanClass) : null)) {
+        var tmp$_3, tmp$_4, tmp$_5, tmp$_6;
+        if (equals($receiver_1.type, InputType.checkBox.realValue) && ((tmp$_3 = PrimitiveClasses$intClass) != null ? tmp$_3.equals(PrimitiveClasses$booleanClass) : null)) {
           bindToInputCheckBox($receiver_1, state_0);
           break bindTo$break;
         }
-         else if (equals($receiver_1.type, InputType.range.realValue) && ((tmp$_3 = PrimitiveClasses$intClass) != null ? tmp$_3.equals(PrimitiveClasses$intClass) : null)) {
+         else if (equals($receiver_1.type, InputType.range.realValue) && ((tmp$_4 = PrimitiveClasses$intClass) != null ? tmp$_4.equals(PrimitiveClasses$intClass) : null)) {
           bindToInputRange($receiver_1, state_0);
           break bindTo$break;
         }
-         else if (equals($receiver_1.type, InputType.number.realValue) && ((tmp$_4 = PrimitiveClasses$intClass) != null ? tmp$_4.equals(PrimitiveClasses$intClass) : null)) {
+         else if (equals($receiver_1.type, InputType.number.realValue) && ((tmp$_5 = PrimitiveClasses$intClass) != null ? tmp$_5.equals(PrimitiveClasses$intClass) : null)) {
           bindToInputTextField($receiver_1, state_0, bindTo$lambda_0(Int, Kotlin.isTypeOf('number')), bindTo$lambda_1);
+          break bindTo$break;
+        }
+         else if (equals($receiver_1.type, InputType.radio.realValue) && ((tmp$_6 = PrimitiveClasses$intClass) != null ? tmp$_6.equals(PrimitiveClasses$intClass) : null)) {
+          bindToRadioButton($receiver_1, state_0);
           break bindTo$break;
         }
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_1.type);
@@ -278,8 +291,88 @@
       return Unit;
     };
   }
+  function HtmlFactory$createFor$lambda_2(closure$missionPart, this$createFor) {
+    return function ($receiver) {
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_3(closure$missionPart));
+      div(this$createFor, 'flex-row', HtmlFactory$createFor$lambda$lambda_4(closure$missionPart, this$createFor));
+      return Unit;
+    };
+  }
   HtmlFactory.prototype.createFor_1 = function ($receiver, missionPart) {
     div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_2(missionPart, $receiver));
+  };
+  function HtmlFactory$createFor$lambda$lambda_5(closure$missionPart) {
+    return function ($receiver) {
+      $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda(closure$missionPart, closure$i) {
+    return function ($receiver) {
+      $receiver.type = InputType.radio;
+      $receiver.name = hashCode(closure$missionPart).toString();
+      $receiver.value = closure$i.toString();
+      $receiver.checked = closure$i === 0;
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$inputId, closure$item) {
+    return function ($receiver) {
+      $receiver.htmlFor = closure$inputId;
+      $receiver.unaryPlus_pdl1vz$(closure$item.choice);
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart, this$createFor) {
+    return function ($receiver) {
+      var $receiver_0 = closure$missionPart.choices;
+      var tmp$, tmp$_0;
+      var index = 0;
+      tmp$ = $receiver_0.iterator();
+      loop_label: while (tmp$.hasNext()) {
+        var item = tmp$.next();
+        var closure$missionPart_0 = closure$missionPart;
+        var this$createFor_0 = this$createFor;
+        var i = checkIndexOverflow((tmp$_0 = index, index = tmp$_0 + 1 | 0, tmp$_0));
+        var inputId = hashCode(closure$missionPart_0).toString() + i.toString();
+        var $receiver_1 = input_0(this$createFor_0, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda(closure$missionPart_0, i));
+        $receiver_1.id = inputId;
+        var state = closure$missionPart_0.selectedIndex;
+        bindTo$break: do {
+          var tmp$_1, tmp$_2, tmp$_3, tmp$_4;
+          if (equals($receiver_1.type, InputType.checkBox.realValue) && ((tmp$_1 = PrimitiveClasses$intClass) != null ? tmp$_1.equals(PrimitiveClasses$booleanClass) : null)) {
+            bindToInputCheckBox($receiver_1, state);
+            break bindTo$break;
+          }
+           else if (equals($receiver_1.type, InputType.range.realValue) && ((tmp$_2 = PrimitiveClasses$intClass) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
+            bindToInputRange($receiver_1, state);
+            break bindTo$break;
+          }
+           else if (equals($receiver_1.type, InputType.number.realValue) && ((tmp$_3 = PrimitiveClasses$intClass) != null ? tmp$_3.equals(PrimitiveClasses$intClass) : null)) {
+            bindToInputTextField($receiver_1, state, bindTo$lambda_0(Int, Kotlin.isTypeOf('number')), bindTo$lambda_1);
+            break bindTo$break;
+          }
+           else if (equals($receiver_1.type, InputType.radio.realValue) && ((tmp$_4 = PrimitiveClasses$intClass) != null ? tmp$_4.equals(PrimitiveClasses$intClass) : null)) {
+            bindToRadioButton($receiver_1, state);
+            break bindTo$break;
+          }
+          throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_1.type);
+        }
+         while (false);
+        label($receiver, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(inputId, item));
+      }
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda_3(closure$missionPart, this$createFor) {
+    return function ($receiver) {
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
+      div(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart, this$createFor));
+      return Unit;
+    };
+  }
+  HtmlFactory.prototype.createFor_2 = function ($receiver, missionPart) {
+    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_3(missionPart, $receiver));
   };
   function HtmlFactory$createFor$lambda$lambda_7(closure$missionPart) {
     return function ($receiver) {
@@ -291,13 +384,13 @@
     $receiver.type = InputType.checkBox;
     return Unit;
   }
-  function HtmlFactory$createFor$lambda_3(closure$missionPart, this$createFor) {
+  function HtmlFactory$createFor$lambda_4(closure$missionPart, this$createFor) {
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_7(closure$missionPart));
       var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_8);
       var state = closure$missionPart.enabled;
       bindTo$break: do {
-        var tmp$, tmp$_0, tmp$_1;
+        var tmp$, tmp$_0, tmp$_1, tmp$_2;
         if (equals($receiver_0.type, InputType.checkBox.realValue) && ((tmp$ = PrimitiveClasses$booleanClass) != null ? tmp$.equals(PrimitiveClasses$booleanClass) : null)) {
           bindToInputCheckBox($receiver_0, state);
           break bindTo$break;
@@ -310,14 +403,18 @@
           bindToInputTextField($receiver_0, state, bindTo$lambda_0(Boolean_0, Kotlin.isTypeOf('boolean')), bindTo$lambda_1);
           break bindTo$break;
         }
+         else if (equals($receiver_0.type, InputType.radio.realValue) && ((tmp$_2 = PrimitiveClasses$booleanClass) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
+          bindToRadioButton($receiver_0, state);
+          break bindTo$break;
+        }
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
       }
        while (false);
       return Unit;
     };
   }
-  HtmlFactory.prototype.createFor_2 = function ($receiver, missionPart) {
-    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_3(missionPart, $receiver));
+  HtmlFactory.prototype.createFor_3 = function ($receiver, missionPart) {
+    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_4(missionPart, $receiver));
   };
   HtmlFactory.$metadata$ = {
     kind: Kind_OBJECT,
@@ -503,7 +600,7 @@
   }
   function main$lambda$lambda(closure$json) {
     return function ($receiver) {
-      FileUtil_getInstance().loadJSON_a1vqyy$('defaultChallenges/my-test-template.json', main$lambda$lambda$lambda(closure$json, $receiver));
+      FileUtil_getInstance().loadJSON_a1vqyy$('defaultChallenges/2019-2020-nl.json', main$lambda$lambda$lambda(closure$json, $receiver));
       return Unit;
     };
   }
@@ -516,7 +613,6 @@
   function main(args) {
     println('Hello JavaScript!');
     var json = new Json(void 0, PolyModules_getInstance().missionPart);
-    console.log('', PolyModules_getInstance().missionPart);
     window.onload = main$lambda(json);
   }
   function CheckBoxMissionPart(description, completionScore) {
@@ -599,132 +695,62 @@
     simpleName: 'CheckBoxMissionPart',
     interfaces: [MissionPart]
   };
-  function ExtraPointsForAllCompletedMissionsMissionPart(description, scorePerCompletion) {
-    ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance();
+  function MultipleChoiceMissionPart(description, choices) {
+    MultipleChoiceMissionPart$Companion_getInstance();
     this.description = description;
-    this.scorePerCompletion = scorePerCompletion;
-    this.missions_4ocfqr$_0 = this.missions_4ocfqr$_0;
-    this.myMission_dop65c$_0 = this.myMission_dop65c$_0;
-    this.score_0 = new State(0);
-    this.backingScore_0 = 0;
-    this.enabled = new State(false);
+    this.choices = choices;
+    this.score = new State(0);
+    this.selectedIndex = new State(0);
+    this.selectedIndex.observe_e2wk6p$(MultipleChoiceMissionPart_init$lambda(this));
   }
-  ExtraPointsForAllCompletedMissionsMissionPart.prototype.getScore = function () {
-    return this.score_0;
+  MultipleChoiceMissionPart.prototype.getScore = function () {
+    return this.score;
   };
-  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart.prototype, 'missions_0', {
-    get: function () {
-      if (this.missions_4ocfqr$_0 == null)
-        return throwUPAE('missions');
-      return this.missions_4ocfqr$_0;
-    },
-    set: function (missions) {
-      this.missions_4ocfqr$_0 = missions;
-    }
-  });
-  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart.prototype, 'myMission_0', {
-    get: function () {
-      if (this.myMission_dop65c$_0 == null)
-        return throwUPAE('myMission');
-      return this.myMission_dop65c$_0;
-    },
-    set: function (myMission) {
-      this.myMission_dop65c$_0 = myMission;
-    }
-  });
-  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
-    return function (previous, new_0) {
-      if (new_0) {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
-      }
-       else {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(0);
-      }
-      return Unit;
-    };
+  function MultipleChoiceMissionPart$Choice(choice, score) {
+    MultipleChoiceMissionPart$Choice$Companion_getInstance();
+    this.choice = choice;
+    this.score = score;
   }
-  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
-    return function (previous, new_0) {
-      if (previous === 0 && new_0 > 0) {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 + this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
-      }
-       else if (previous > 0 && new_0 === 0) {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 - this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
-      }
-      if (this$ExtraPointsForAllCompletedMissionsMissionPart.enabled.getCurrentState()) {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
-      }
-      return Unit;
-    };
+  function MultipleChoiceMissionPart$Choice$Companion() {
+    MultipleChoiceMissionPart$Choice$Companion_instance = this;
   }
-  ExtraPointsForAllCompletedMissionsMissionPart.prototype.initialize_rcovp7$ = function (myMission, missions) {
-    this.myMission_0 = myMission;
-    this.missions_0 = missions;
-    this.enabled.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda(this));
-    var tmp$;
-    tmp$ = missions.iterator();
-    loop_label: while (tmp$.hasNext()) {
-      var element = tmp$.next();
-      action$break: do {
-        if (equals(element, myMission))
-          break action$break;
-        element.totalScore.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this));
-      }
-       while (false);
-    }
+  MultipleChoiceMissionPart$Choice$Companion.prototype.serializer = function () {
+    return MultipleChoiceMissionPart$Choice$$serializer_getInstance();
   };
-  function ExtraPointsForAllCompletedMissionsMissionPart$Companion() {
-    ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = this;
-  }
-  ExtraPointsForAllCompletedMissionsMissionPart$Companion.prototype.serializer = function () {
-    return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance();
-  };
-  ExtraPointsForAllCompletedMissionsMissionPart$Companion.$metadata$ = {
+  MultipleChoiceMissionPart$Choice$Companion.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'Companion',
     interfaces: []
   };
-  var ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = null;
-  function ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance() {
-    if (ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance === null) {
-      new ExtraPointsForAllCompletedMissionsMissionPart$Companion();
+  var MultipleChoiceMissionPart$Choice$Companion_instance = null;
+  function MultipleChoiceMissionPart$Choice$Companion_getInstance() {
+    if (MultipleChoiceMissionPart$Choice$Companion_instance === null) {
+      new MultipleChoiceMissionPart$Choice$Companion();
     }
-    return ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance;
+    return MultipleChoiceMissionPart$Choice$Companion_instance;
   }
-  function ExtraPointsForAllCompletedMissionsMissionPart$$serializer() {
-    this.descriptor_kb16z1$_0 = new SerialClassDescImpl('ExtraPointsForAllCompletedMissionsMissionPart', this);
-    this.descriptor.addElement_ivxn3r$('description', false);
-    this.descriptor.addElement_ivxn3r$('scorePerCompletion', false);
-    this.descriptor.addElement_ivxn3r$('score', true);
-    this.descriptor.addElement_ivxn3r$('backingScore', true);
-    this.descriptor.addElement_ivxn3r$('enabled', true);
-    ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance = this;
+  function MultipleChoiceMissionPart$Choice$$serializer() {
+    this.descriptor_kz7j1y$_0 = new SerialClassDescImpl('mission.parts.MultipleChoiceMissionPart.Choice', this);
+    this.descriptor.addElement_ivxn3r$('choice', false);
+    this.descriptor.addElement_ivxn3r$('score', false);
+    MultipleChoiceMissionPart$Choice$$serializer_instance = this;
   }
-  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype, 'descriptor', {
+  Object.defineProperty(MultipleChoiceMissionPart$Choice$$serializer.prototype, 'descriptor', {
     get: function () {
-      return this.descriptor_kb16z1$_0;
+      return this.descriptor_kz7j1y$_0;
     }
   });
-  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
+  MultipleChoiceMissionPart$Choice$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
-    output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.description);
-    output.encodeIntElement_4wpqag$(this.descriptor, 1, obj.scorePerCompletion);
-    if (!equals(obj.score_0, new State(0)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 2))
-      output.encodeSerializableElement_blecud$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), obj.score_0);
-    if (!equals(obj.backingScore_0, 0) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 3))
-      output.encodeIntElement_4wpqag$(this.descriptor, 3, obj.backingScore_0);
-    if (!equals(obj.enabled, new State(false)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 4))
-      output.encodeSerializableElement_blecud$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), obj.enabled);
+    output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.choice);
+    output.encodeIntElement_4wpqag$(this.descriptor, 1, obj.score);
     output.endStructure_qatsm0$(this.descriptor);
   };
-  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
+  MultipleChoiceMissionPart$Choice$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
     var local0
-    , local1
-    , local2
-    , local3
-    , local4;
+    , local1;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -741,71 +767,131 @@
           bitMask0 |= 2;
           if (!readAll)
             break;
-        case 2:
-          local2 = (bitMask0 & 4) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 2, new StateSerializer(internal.IntSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), local2);
-          bitMask0 |= 4;
-          if (!readAll)
-            break;
-        case 3:
-          local3 = input.decodeIntElement_3zr2iy$(this.descriptor, 3);
-          bitMask0 |= 8;
-          if (!readAll)
-            break;
-        case 4:
-          local4 = (bitMask0 & 16) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), local4);
-          bitMask0 |= 16;
-          if (!readAll)
-            break;
         case -1:
           break loopLabel;
         default:throw new UnknownFieldException(index);
       }
     }
     input.endStructure_qatsm0$(this.descriptor);
-    return ExtraPointsForAllCompletedMissionsMissionPart_init(bitMask0, local0, local1, local2, local3, local4, null);
+    return MultipleChoiceMissionPart$MultipleChoiceMissionPart$Choice_init(bitMask0, local0, local1, null);
   };
-  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.childSerializers = function () {
-    return [internal.StringSerializer, internal.IntSerializer, new StateSerializer(internal.IntSerializer), internal.IntSerializer, new StateSerializer(internal.BooleanSerializer)];
+  MultipleChoiceMissionPart$Choice$$serializer.prototype.childSerializers = function () {
+    return [internal.StringSerializer, internal.IntSerializer];
   };
-  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.$metadata$ = {
+  MultipleChoiceMissionPart$Choice$$serializer.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: '$serializer',
     interfaces: [GeneratedSerializer]
   };
-  var ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance = null;
-  function ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance() {
-    if (ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance === null) {
-      new ExtraPointsForAllCompletedMissionsMissionPart$$serializer();
+  var MultipleChoiceMissionPart$Choice$$serializer_instance = null;
+  function MultipleChoiceMissionPart$Choice$$serializer_getInstance() {
+    if (MultipleChoiceMissionPart$Choice$$serializer_instance === null) {
+      new MultipleChoiceMissionPart$Choice$$serializer();
     }
-    return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance;
+    return MultipleChoiceMissionPart$Choice$$serializer_instance;
   }
-  function ExtraPointsForAllCompletedMissionsMissionPart_init(seen1, description, scorePerCompletion, score, backingScore, enabled, serializationConstructorMarker) {
-    var $this = serializationConstructorMarker || Object.create(ExtraPointsForAllCompletedMissionsMissionPart.prototype);
+  function MultipleChoiceMissionPart$MultipleChoiceMissionPart$Choice_init(seen1, choice, score, serializationConstructorMarker) {
+    var $this = serializationConstructorMarker || Object.create(MultipleChoiceMissionPart$Choice.prototype);
     if ((seen1 & 1) === 0)
-      throw new MissingFieldException('description');
+      throw new MissingFieldException('choice');
     else
-      $this.description = description;
+      $this.choice = choice;
     if ((seen1 & 2) === 0)
-      throw new MissingFieldException('scorePerCompletion');
+      throw new MissingFieldException('score');
     else
-      $this.scorePerCompletion = scorePerCompletion;
-    if ((seen1 & 4) === 0)
-      $this.score_0 = new State(0);
-    else
-      $this.score_0 = score;
-    if ((seen1 & 8) === 0)
-      $this.backingScore_0 = 0;
-    else
-      $this.backingScore_0 = backingScore;
-    if ((seen1 & 16) === 0)
-      $this.enabled = new State(false);
-    else
-      $this.enabled = enabled;
+      $this.score = score;
     return $this;
   }
-  ExtraPointsForAllCompletedMissionsMissionPart.$metadata$ = {
+  MultipleChoiceMissionPart$Choice.$metadata$ = {
     kind: Kind_CLASS,
-    simpleName: 'ExtraPointsForAllCompletedMissionsMissionPart',
+    simpleName: 'Choice',
+    interfaces: []
+  };
+  MultipleChoiceMissionPart$Choice.prototype.component1 = function () {
+    return this.choice;
+  };
+  MultipleChoiceMissionPart$Choice.prototype.component2 = function () {
+    return this.score;
+  };
+  MultipleChoiceMissionPart$Choice.prototype.copy_bm4lxs$ = function (choice, score) {
+    return new MultipleChoiceMissionPart$Choice(choice === void 0 ? this.choice : choice, score === void 0 ? this.score : score);
+  };
+  MultipleChoiceMissionPart$Choice.prototype.toString = function () {
+    return 'Choice(choice=' + Kotlin.toString(this.choice) + (', score=' + Kotlin.toString(this.score)) + ')';
+  };
+  MultipleChoiceMissionPart$Choice.prototype.hashCode = function () {
+    var result = 0;
+    result = result * 31 + Kotlin.hashCode(this.choice) | 0;
+    result = result * 31 + Kotlin.hashCode(this.score) | 0;
+    return result;
+  };
+  MultipleChoiceMissionPart$Choice.prototype.equals = function (other) {
+    return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && (Kotlin.equals(this.choice, other.choice) && Kotlin.equals(this.score, other.score)))));
+  };
+  function MultipleChoiceMissionPart$Companion() {
+    MultipleChoiceMissionPart$Companion_instance = this;
+    this.helper_0 = new SerializationHelper(getKClass(MultipleChoiceMissionPart), hashMapOf([to(0, new HelperHolder('description', serializer(kotlin_js_internal_StringCompanionObject), MultipleChoiceMissionPart$Companion$helper$lambda)), to(1, new HelperHolder('choices', get_list(MultipleChoiceMissionPart$Choice$Companion_getInstance().serializer()), MultipleChoiceMissionPart$Companion$helper$lambda_0)), to(2, new HelperHolder('selectedIndex', new StateSerializer(serializer_0(kotlin_js_internal_IntCompanionObject)), MultipleChoiceMissionPart$Companion$helper$lambda_1)), to(3, new HelperHolder('score', new StateSerializer(serializer_0(kotlin_js_internal_IntCompanionObject)), MultipleChoiceMissionPart$Companion$helper$lambda_2))]), MultipleChoiceMissionPart$Companion$helper$lambda_3);
+    this.descriptor_3roj7r$_0 = this.helper_0.descriptor;
+  }
+  Object.defineProperty(MultipleChoiceMissionPart$Companion.prototype, 'descriptor', {
+    get: function () {
+      return this.descriptor_3roj7r$_0;
+    }
+  });
+  MultipleChoiceMissionPart$Companion.prototype.serialize_awe97i$ = function (encoder, obj) {
+    this.helper_0.serialize_awe97i$(encoder, obj);
+  };
+  MultipleChoiceMissionPart$Companion.prototype.deserialize_nts5qn$ = function (decoder) {
+    return this.helper_0.deserialize_nts5qn$(decoder);
+  };
+  MultipleChoiceMissionPart$Companion.prototype.serializer = function () {
+    return MultipleChoiceMissionPart$Companion_getInstance();
+  };
+  function MultipleChoiceMissionPart$Companion$helper$lambda(it) {
+    return it.description;
+  }
+  function MultipleChoiceMissionPart$Companion$helper$lambda_0(it) {
+    return it.choices;
+  }
+  function MultipleChoiceMissionPart$Companion$helper$lambda_1(it) {
+    return it.selectedIndex;
+  }
+  function MultipleChoiceMissionPart$Companion$helper$lambda_2(it) {
+    return it.score;
+  }
+  function MultipleChoiceMissionPart$Companion$helper$lambda_3(it) {
+    var tmp$, tmp$_0;
+    var $receiver = new MultipleChoiceMissionPart(typeof (tmp$ = it.get_11rb$('description')) === 'string' ? tmp$ : throwCCE(), Kotlin.isType(tmp$_0 = it.get_11rb$('choices'), List) ? tmp$_0 : throwCCE());
+    var tmp$_1, tmp$_2, tmp$_3, tmp$_4;
+    if ((tmp$_2 = (tmp$_1 = it.get_11rb$('selectedIndex')) != null ? tmp$_1 : null) != null) {
+      $receiver.selectedIndex.update_trkh7z$(tmp$_2.getCurrentState());
+    }
+    if ((tmp$_4 = (tmp$_3 = it.get_11rb$('score')) != null ? tmp$_3 : null) != null) {
+      $receiver.score.update_trkh7z$(tmp$_4.getCurrentState());
+    }
+    return $receiver;
+  }
+  MultipleChoiceMissionPart$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: [KSerializer]
+  };
+  var MultipleChoiceMissionPart$Companion_instance = null;
+  function MultipleChoiceMissionPart$Companion_getInstance() {
+    if (MultipleChoiceMissionPart$Companion_instance === null) {
+      new MultipleChoiceMissionPart$Companion();
+    }
+    return MultipleChoiceMissionPart$Companion_instance;
+  }
+  function MultipleChoiceMissionPart_init$lambda(this$MultipleChoiceMissionPart) {
+    return function (previous, new_0) {
+      this$MultipleChoiceMissionPart.score.update_trkh7z$(this$MultipleChoiceMissionPart.choices.get_za3lpa$(new_0).score);
+      return Unit;
+    };
+  }
+  MultipleChoiceMissionPart.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'MultipleChoiceMissionPart',
     interfaces: [MissionPart]
   };
   function SliderMissionPart(description, min, max, scoreMap) {
@@ -918,6 +1004,215 @@
       return new Pair(it, closure$calculateScore(it));
     };
   }
+  function ExtraPointsForAllCompletedMissionsMissionPart(description, scorePerCompletion) {
+    ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance();
+    this.description = description;
+    this.scorePerCompletion = scorePerCompletion;
+    this.missions_cbty3s$_0 = this.missions_cbty3s$_0;
+    this.myMission_x7o8j9$_0 = this.myMission_x7o8j9$_0;
+    this.score_0 = new State(0);
+    this.backingScore_0 = 0;
+    this.enabled = new State(false);
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart.prototype.getScore = function () {
+    return this.score_0;
+  };
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart.prototype, 'missions_0', {
+    get: function () {
+      if (this.missions_cbty3s$_0 == null)
+        return throwUPAE('missions');
+      return this.missions_cbty3s$_0;
+    },
+    set: function (missions) {
+      this.missions_cbty3s$_0 = missions;
+    }
+  });
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart.prototype, 'myMission_0', {
+    get: function () {
+      if (this.myMission_x7o8j9$_0 == null)
+        return throwUPAE('myMission');
+      return this.myMission_x7o8j9$_0;
+    },
+    set: function (myMission) {
+      this.myMission_x7o8j9$_0 = myMission;
+    }
+  });
+  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
+    return function (previous, new_0) {
+      if (new_0) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
+      }
+       else {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(0);
+      }
+      return Unit;
+    };
+  }
+  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
+    return function (previous, new_0) {
+      if (previous === 0 && new_0 > 0) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 + this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
+      }
+       else if (previous > 0 && new_0 === 0) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 - this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
+      }
+      if (this$ExtraPointsForAllCompletedMissionsMissionPart.enabled.getCurrentState()) {
+        this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
+      }
+      return Unit;
+    };
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart.prototype.initialize_rcovp7$ = function (myMission, missions) {
+    this.myMission_0 = myMission;
+    this.missions_0 = missions;
+    this.enabled.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda(this));
+    var tmp$;
+    tmp$ = missions.iterator();
+    loop_label: while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      action$break: do {
+        if (equals(element, myMission))
+          break action$break;
+        element.totalScore.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this));
+      }
+       while (false);
+    }
+  };
+  function ExtraPointsForAllCompletedMissionsMissionPart$Companion() {
+    ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = this;
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart$Companion.prototype.serializer = function () {
+    return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance();
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = null;
+  function ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance() {
+    if (ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance === null) {
+      new ExtraPointsForAllCompletedMissionsMissionPart$Companion();
+    }
+    return ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance;
+  }
+  function ExtraPointsForAllCompletedMissionsMissionPart$$serializer() {
+    this.descriptor_w4txwo$_0 = new SerialClassDescImpl('ExtraPointsForAllCompletedMissionsMissionPart', this);
+    this.descriptor.addElement_ivxn3r$('description', false);
+    this.descriptor.addElement_ivxn3r$('scorePerCompletion', false);
+    this.descriptor.addElement_ivxn3r$('score', true);
+    this.descriptor.addElement_ivxn3r$('backingScore', true);
+    this.descriptor.addElement_ivxn3r$('enabled', true);
+    ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance = this;
+  }
+  Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype, 'descriptor', {
+    get: function () {
+      return this.descriptor_w4txwo$_0;
+    }
+  });
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
+    var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
+    output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.description);
+    output.encodeIntElement_4wpqag$(this.descriptor, 1, obj.scorePerCompletion);
+    if (!equals(obj.score_0, new State(0)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 2))
+      output.encodeSerializableElement_blecud$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), obj.score_0);
+    if (!equals(obj.backingScore_0, 0) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 3))
+      output.encodeIntElement_4wpqag$(this.descriptor, 3, obj.backingScore_0);
+    if (!equals(obj.enabled, new State(false)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 4))
+      output.encodeSerializableElement_blecud$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), obj.enabled);
+    output.endStructure_qatsm0$(this.descriptor);
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
+    var index, readAll = false;
+    var bitMask0 = 0;
+    var local0
+    , local1
+    , local2
+    , local3
+    , local4;
+    var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
+    loopLabel: while (true) {
+      index = input.decodeElementIndex_qatsm0$(this.descriptor);
+      switch (index) {
+        case -2:
+          readAll = true;
+        case 0:
+          local0 = input.decodeStringElement_3zr2iy$(this.descriptor, 0);
+          bitMask0 |= 1;
+          if (!readAll)
+            break;
+        case 1:
+          local1 = input.decodeIntElement_3zr2iy$(this.descriptor, 1);
+          bitMask0 |= 2;
+          if (!readAll)
+            break;
+        case 2:
+          local2 = (bitMask0 & 4) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 2, new StateSerializer(internal.IntSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), local2);
+          bitMask0 |= 4;
+          if (!readAll)
+            break;
+        case 3:
+          local3 = input.decodeIntElement_3zr2iy$(this.descriptor, 3);
+          bitMask0 |= 8;
+          if (!readAll)
+            break;
+        case 4:
+          local4 = (bitMask0 & 16) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), local4);
+          bitMask0 |= 16;
+          if (!readAll)
+            break;
+        case -1:
+          break loopLabel;
+        default:throw new UnknownFieldException(index);
+      }
+    }
+    input.endStructure_qatsm0$(this.descriptor);
+    return ExtraPointsForAllCompletedMissionsMissionPart_init(bitMask0, local0, local1, local2, local3, local4, null);
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.childSerializers = function () {
+    return [internal.StringSerializer, internal.IntSerializer, new StateSerializer(internal.IntSerializer), internal.IntSerializer, new StateSerializer(internal.BooleanSerializer)];
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: '$serializer',
+    interfaces: [GeneratedSerializer]
+  };
+  var ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance = null;
+  function ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance() {
+    if (ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance === null) {
+      new ExtraPointsForAllCompletedMissionsMissionPart$$serializer();
+    }
+    return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance;
+  }
+  function ExtraPointsForAllCompletedMissionsMissionPart_init(seen1, description, scorePerCompletion, score, backingScore, enabled, serializationConstructorMarker) {
+    var $this = serializationConstructorMarker || Object.create(ExtraPointsForAllCompletedMissionsMissionPart.prototype);
+    if ((seen1 & 1) === 0)
+      throw new MissingFieldException('description');
+    else
+      $this.description = description;
+    if ((seen1 & 2) === 0)
+      throw new MissingFieldException('scorePerCompletion');
+    else
+      $this.scorePerCompletion = scorePerCompletion;
+    if ((seen1 & 4) === 0)
+      $this.score_0 = new State(0);
+    else
+      $this.score_0 = score;
+    if ((seen1 & 8) === 0)
+      $this.backingScore_0 = 0;
+    else
+      $this.backingScore_0 = backingScore;
+    if ((seen1 & 16) === 0)
+      $this.enabled = new State(false);
+    else
+      $this.enabled = enabled;
+    return $this;
+  }
+  ExtraPointsForAllCompletedMissionsMissionPart.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'ExtraPointsForAllCompletedMissionsMissionPart',
+    interfaces: [MissionPart]
+  };
   function MapIntIntSerializer() {
     MapIntIntSerializer_instance = this;
     this.serializer_0 = get_map(to(internal.StringSerializer, internal.IntSerializer));
@@ -969,6 +1264,7 @@
   function PolyModules$missionPart$lambda$lambda($receiver) {
     $receiver.with_kmpi2j$(getKClass(CheckBoxMissionPart), CheckBoxMissionPart$Companion_getInstance().serializer());
     $receiver.with_kmpi2j$(getKClass(SliderMissionPart), SliderMissionPart$Companion_getInstance().serializer());
+    $receiver.with_kmpi2j$(getKClass(MultipleChoiceMissionPart), MultipleChoiceMissionPart$Companion_getInstance().serializer());
     $receiver.with_kmpi2j$(getKClass(ExtraPointsForAllCompletedMissionsMissionPart), ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance().serializer());
     return Unit;
   }
@@ -1184,6 +1480,7 @@
     var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
     var throwCCE = Kotlin.throwCCE;
     var bindToInputTextField = _.state.bindToInputTextField_3kfxms$;
+    var bindToRadioButton = _.state.bindToRadioButton_fcy6pt$;
     var RuntimeException_init = Kotlin.kotlin.RuntimeException_init_pdl1vj$;
     function bindTo$lambda(typeClosure$T, isT) {
       return function (s) {
@@ -1195,7 +1492,7 @@
       return t.toString();
     }
     return function (T_0, isT, $receiver, state) {
-      var tmp$, tmp$_0, tmp$_1;
+      var tmp$, tmp$_0, tmp$_1, tmp$_2;
       if (equals($receiver.type, InputType.checkBox.realValue) && ((tmp$ = getKClass(T_0)) != null ? tmp$.equals(PrimitiveClasses$booleanClass) : null)) {
         return bindToInputCheckBox($receiver, state);
       }
@@ -1205,9 +1502,32 @@
        else if (equals($receiver.type, InputType.number.realValue) && ((tmp$_1 = getKClass(T_0)) != null ? tmp$_1.equals(PrimitiveClasses$intClass) : null)) {
         return bindToInputTextField($receiver, state, bindTo$lambda(T_0, isT), bindTo$lambda_0);
       }
+       else if (equals($receiver.type, InputType.radio.realValue) && ((tmp$_2 = getKClass(T_0)) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
+        return bindToRadioButton($receiver, state);
+      }
       throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver.type);
     };
   }));
+  function bindToRadioButton$lambda(this$bindToRadioButton, closure$state) {
+    return function (event) {
+      if (event.isTrusted && this$bindToRadioButton.checked) {
+        closure$state.update_trkh7z$(toInt(this$bindToRadioButton.value));
+      }
+      return Unit;
+    };
+  }
+  function bindToRadioButton$lambda_0(this$bindToRadioButton) {
+    return function (f, new_0) {
+      if (equals(new_0.toString(), this$bindToRadioButton.value))
+        this$bindToRadioButton.checked = true;
+      return Unit;
+    };
+  }
+  function bindToRadioButton($receiver, state) {
+    $receiver.onchange = bindToRadioButton$lambda($receiver, state);
+    state.observe_e2wk6p$(bindToRadioButton$lambda_0($receiver));
+    return $receiver;
+  }
   function bindToInputRange$lambda(closure$state, this$bindToInputRange) {
     return function (event) {
       if (event.isTrusted) {
@@ -1320,19 +1640,32 @@
   });
   var package$parts = package$mission.parts || (package$mission.parts = {});
   package$parts.CheckBoxMissionPart = CheckBoxMissionPart;
+  Object.defineProperty(MultipleChoiceMissionPart$Choice, 'Companion', {
+    get: MultipleChoiceMissionPart$Choice$Companion_getInstance
+  });
+  Object.defineProperty(MultipleChoiceMissionPart$Choice, '$serializer', {
+    get: MultipleChoiceMissionPart$Choice$$serializer_getInstance
+  });
+  MultipleChoiceMissionPart.Choice_init_ib58j$ = MultipleChoiceMissionPart$MultipleChoiceMissionPart$Choice_init;
+  MultipleChoiceMissionPart.Choice = MultipleChoiceMissionPart$Choice;
+  Object.defineProperty(MultipleChoiceMissionPart, 'Companion', {
+    get: MultipleChoiceMissionPart$Companion_getInstance
+  });
+  package$parts.MultipleChoiceMissionPart = MultipleChoiceMissionPart;
+  Object.defineProperty(SliderMissionPart, 'Companion', {
+    get: SliderMissionPart$Companion_getInstance
+  });
+  package$parts.SliderMissionPart_init_archxs$ = SliderMissionPart_init;
+  package$parts.SliderMissionPart = SliderMissionPart;
   Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart, 'Companion', {
     get: ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance
   });
   Object.defineProperty(ExtraPointsForAllCompletedMissionsMissionPart, '$serializer', {
     get: ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance
   });
-  package$parts.ExtraPointsForAllCompletedMissionsMissionPart_init_aka52o$ = ExtraPointsForAllCompletedMissionsMissionPart_init;
-  package$parts.ExtraPointsForAllCompletedMissionsMissionPart = ExtraPointsForAllCompletedMissionsMissionPart;
-  Object.defineProperty(SliderMissionPart, 'Companion', {
-    get: SliderMissionPart$Companion_getInstance
-  });
-  package$parts.SliderMissionPart_init_archxs$ = SliderMissionPart_init;
-  package$parts.SliderMissionPart = SliderMissionPart;
+  var package$special = package$parts.special || (package$parts.special = {});
+  package$special.ExtraPointsForAllCompletedMissionsMissionPart_init_aka52o$ = ExtraPointsForAllCompletedMissionsMissionPart_init;
+  package$special.ExtraPointsForAllCompletedMissionsMissionPart = ExtraPointsForAllCompletedMissionsMissionPart;
   var package$serialization = _.serialization || (_.serialization = {});
   Object.defineProperty(package$serialization, 'MapIntIntSerializer', {
     get: MapIntIntSerializer_getInstance
@@ -1353,6 +1686,7 @@
   package$state.bindToInputCheckBox_m14o6e$ = bindToInputCheckBox;
   package$state.bindToInputRange_fcy6pt$ = bindToInputRange;
   package$state.bindToInputTextField_3kfxms$ = bindToInputTextField;
+  package$state.bindToRadioButton_fcy6pt$ = bindToRadioButton;
   var package$util = _.util || (_.util = {});
   Object.defineProperty(package$util, 'FileUtil', {
     get: FileUtil_getInstance
@@ -1360,8 +1694,10 @@
   Challenge$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   Mission$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   CheckBoxMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
-  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
+  MultipleChoiceMissionPart$Choice$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
+  MultipleChoiceMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   SliderMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
+  ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   MapIntIntSerializer.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   SerializationHelper.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   HelperHolder$serializer$ObjectLiteral.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
