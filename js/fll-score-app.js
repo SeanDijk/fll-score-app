@@ -19,11 +19,13 @@
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var Unit = Kotlin.kotlin.Unit;
-  var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
+  var h1 = $module$kotlinx_html_js.kotlinx.html.js.h1_1esf85$;
   var div = $module$kotlinx_html_js.kotlinx.html.js.div_wkomt5$;
   var span = $module$kotlinx_html_js.kotlinx.html.js.span_x24v7w$;
   var Int = Number;
   var PrimitiveClasses$intClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.intClass;
+  var first = Kotlin.kotlin.collections.first_2p1efm$;
+  var img = $module$kotlinx_html_js.kotlinx.html.js.img_6lw7hj$;
   var throwCCE = Kotlin.throwCCE;
   var getKClass = Kotlin.getKClass;
   var equals = Kotlin.equals;
@@ -34,7 +36,7 @@
   var Boolean_0 = Boolean;
   var PrimitiveClasses$booleanClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.booleanClass;
   var hashCode = Kotlin.hashCode;
-  var label = $module$kotlinx_html_js.kotlinx.html.label_yd75js$;
+  var label = $module$kotlinx_html_js.kotlinx.html.js.label_uo7uay$;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
   var checkIndexOverflow = Kotlin.kotlin.collections.checkIndexOverflow_za3lpa$;
@@ -48,18 +50,20 @@
   var List = Kotlin.kotlin.collections.List;
   var KSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.KSerializer;
   var Kind_CLASS = Kotlin.Kind.CLASS;
+  var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
+  var UnknownFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.UnknownFieldException;
+  var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
+  var GeneratedSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.GeneratedSerializer;
+  var MissingFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.MissingFieldException;
   var PolymorphicSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.PolymorphicSerializer;
+  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
+  var emptyList = Kotlin.kotlin.collections.emptyList_287e2$;
   var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Json = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.json.Json;
   var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
   var kotlin_js_internal_BooleanCompanionObject = Kotlin.kotlin.js.internal.BooleanCompanionObject;
   var serializer_1 = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_jtjczu$;
-  var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
-  var UnknownFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.UnknownFieldException;
-  var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
-  var GeneratedSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.GeneratedSerializer;
-  var MissingFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.MissingFieldException;
   var Map = Kotlin.kotlin.collections.Map;
   var IntRange = Kotlin.kotlin.ranges.IntRange;
   var asSequence = Kotlin.kotlin.collections.asSequence_7wnvza$;
@@ -68,6 +72,8 @@
   var toMap = Kotlin.kotlin.collections.toMap_ah2ab9$;
   var IllegalStateException_init = Kotlin.kotlin.IllegalStateException_init_pdl1vj$;
   var throwUPAE = Kotlin.throwUPAE;
+  var LinkedHashMapSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.LinkedHashMapSerializer;
+  var HashMap_init = Kotlin.kotlin.collections.HashMap_init_q3lmfv$;
   var get_map = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.get_map_kgqhr1$;
   var withName = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.withName_8new1j$;
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
@@ -77,7 +83,6 @@
   var ensureNotNull = Kotlin.ensureNotNull;
   var Any = Object;
   var LinkedHashMap_init_0 = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
-  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var defineInlineFunction = Kotlin.defineInlineFunction;
   var wrapFunction = Kotlin.wrapFunction;
   var toShort = Kotlin.toShort;
@@ -107,9 +112,9 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda(closure$challenge, this$HtmlFactory, this$createFor) {
+  function HtmlFactory$createFor$lambda(closure$challenge, this$createFor, this$HtmlFactory) {
     return function ($receiver) {
-      h1($receiver, void 0, HtmlFactory$createFor$lambda$lambda(closure$challenge));
+      h1(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda(closure$challenge));
       var $receiver_0 = closure$challenge.missions;
       var tmp$;
       tmp$ = $receiver_0.iterator();
@@ -121,7 +126,7 @@
     };
   }
   HtmlFactory.prototype.createFor_8dmwun$ = function ($receiver, challenge) {
-    div($receiver, 'flex-column', HtmlFactory$createFor$lambda(challenge, this, $receiver));
+    div($receiver, 'flex-column', HtmlFactory$createFor$lambda(challenge, $receiver, this));
   };
   function HtmlFactory$createFor$lambda$lambda$lambda(closure$mission) {
     return function ($receiver) {
@@ -140,9 +145,20 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda_0(closure$mission, this$createFor, this$HtmlFactory) {
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda($receiver) {
+    return Unit;
+  }
+  function HtmlFactory$createFor$lambda$lambda$lambda_1(closure$mission, this$createFor) {
     return function ($receiver) {
-      div(this$createFor, 'flex-row mission-header', HtmlFactory$createFor$lambda$lambda_0(closure$mission, this$createFor));
+      var tmp$, tmp$_0;
+      tmp$ = 'img/' + first(closure$mission.images).path;
+      tmp$_0 = first(closure$mission.images).description;
+      img(this$createFor, tmp$_0, tmp$, 'mission-main-image', HtmlFactory$createFor$lambda$lambda$lambda$lambda);
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda$lambda$lambda_2(closure$mission, this$HtmlFactory, this$createFor) {
+    return function ($receiver) {
       var $receiver_0 = closure$mission.missionParts;
       var tmp$;
       tmp$ = $receiver_0.iterator();
@@ -150,6 +166,22 @@
         var element = tmp$.next();
         this$HtmlFactory.createFor_b8g645$(this$createFor, element);
       }
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda$lambda_1(closure$mission, this$createFor, this$HtmlFactory) {
+    return function ($receiver) {
+      if (!closure$mission.images.isEmpty()) {
+        div(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda$lambda_1(closure$mission, this$createFor));
+      }
+      div(this$createFor, 'flex-column flex-filler', HtmlFactory$createFor$lambda$lambda$lambda_2(closure$mission, this$HtmlFactory, this$createFor));
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda_0(closure$mission, this$createFor, this$HtmlFactory) {
+    return function ($receiver) {
+      div(this$createFor, 'flex-row mission-header', HtmlFactory$createFor$lambda$lambda_0(closure$mission, this$createFor));
+      div(this$createFor, 'flex-row flex-filler', HtmlFactory$createFor$lambda$lambda_1(closure$mission, this$createFor, this$HtmlFactory));
       return Unit;
     };
   }
@@ -174,20 +206,20 @@
      else
       throw RuntimeException_init('MissionPart type not implemented in HtmlFactory: ' + toString(Kotlin.getKClassFromExpression(missionPart)));
   };
-  function HtmlFactory$createFor$lambda$lambda_1(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_2(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_2($receiver) {
+  function HtmlFactory$createFor$lambda$lambda_3($receiver) {
     $receiver.type = InputType.checkBox;
     return Unit;
   }
   function HtmlFactory$createFor$lambda_1(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_1(closure$missionPart));
-      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_2);
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_2(closure$missionPart));
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_3);
       var state = closure$missionPart.completed;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1, tmp$_2;
@@ -216,13 +248,13 @@
   HtmlFactory.prototype.createFor_0 = function ($receiver, missionPart) {
     div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_1(missionPart, $receiver));
   };
-  function HtmlFactory$createFor$lambda$lambda_3(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_4(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda$lambda_1(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda$lambda_3(closure$missionPart) {
     return function ($receiver) {
       $receiver.type = InputType.number;
       $receiver.min = closure$missionPart.min.toString();
@@ -231,7 +263,7 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda$lambda_2(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda$lambda_4(closure$missionPart) {
     return function ($receiver) {
       $receiver.type = InputType.range;
       $receiver.min = closure$missionPart.min.toString();
@@ -240,9 +272,9 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_4(closure$missionPart, this$createFor) {
+  function HtmlFactory$createFor$lambda$lambda_5(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda_1(closure$missionPart));
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda_3(closure$missionPart));
       var state = closure$missionPart.value;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1, tmp$_2;
@@ -265,7 +297,7 @@
         throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
       }
        while (false);
-      var $receiver_1 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda_2(closure$missionPart));
+      var $receiver_1 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda_4(closure$missionPart));
       var state_0 = closure$missionPart.value;
       bindTo$break: do {
         var tmp$_3, tmp$_4, tmp$_5, tmp$_6;
@@ -293,21 +325,21 @@
   }
   function HtmlFactory$createFor$lambda_2(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_3(closure$missionPart));
-      div(this$createFor, 'flex-row', HtmlFactory$createFor$lambda$lambda_4(closure$missionPart, this$createFor));
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_4(closure$missionPart));
+      div(this$createFor, 'flex-row', HtmlFactory$createFor$lambda$lambda_5(closure$missionPart, this$createFor));
       return Unit;
     };
   }
   HtmlFactory.prototype.createFor_1 = function ($receiver, missionPart) {
     div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_2(missionPart, $receiver));
   };
-  function HtmlFactory$createFor$lambda$lambda_5(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda$lambda$lambda(closure$missionPart, closure$i) {
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$missionPart, closure$i) {
     return function ($receiver) {
       $receiver.type = InputType.radio;
       $receiver.name = hashCode(closure$missionPart).toString();
@@ -316,14 +348,14 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$inputId, closure$item) {
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_1(closure$inputId, closure$item) {
     return function ($receiver) {
       $receiver.htmlFor = closure$inputId;
       $receiver.unaryPlus_pdl1vz$(closure$item.choice);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart, this$createFor) {
+  function HtmlFactory$createFor$lambda$lambda_7(closure$missionPart, this$createFor) {
     return function ($receiver) {
       var $receiver_0 = closure$missionPart.choices;
       var tmp$, tmp$_0;
@@ -335,7 +367,7 @@
         var this$createFor_0 = this$createFor;
         var i = checkIndexOverflow((tmp$_0 = index, index = tmp$_0 + 1 | 0, tmp$_0));
         var inputId = hashCode(closure$missionPart_0).toString() + i.toString();
-        var $receiver_1 = input_0(this$createFor_0, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda(closure$missionPart_0, i));
+        var $receiver_1 = input_0(this$createFor_0, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$missionPart_0, i));
         $receiver_1.id = inputId;
         var state = closure$missionPart_0.selectedIndex;
         bindTo$break: do {
@@ -359,35 +391,35 @@
           throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_1.type);
         }
          while (false);
-        label($receiver, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(inputId, item));
+        label(this$createFor_0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_1(inputId, item));
       }
       return Unit;
     };
   }
   function HtmlFactory$createFor$lambda_3(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_5(closure$missionPart));
-      div(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart, this$createFor));
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
+      div(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_7(closure$missionPart, this$createFor));
       return Unit;
     };
   }
   HtmlFactory.prototype.createFor_2 = function ($receiver, missionPart) {
     div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_3(missionPart, $receiver));
   };
-  function HtmlFactory$createFor$lambda$lambda_7(closure$missionPart) {
+  function HtmlFactory$createFor$lambda$lambda_8(closure$missionPart) {
     return function ($receiver) {
       $receiver.unaryPlus_pdl1vz$(closure$missionPart.description);
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda_8($receiver) {
+  function HtmlFactory$createFor$lambda$lambda_9($receiver) {
     $receiver.type = InputType.checkBox;
     return Unit;
   }
   function HtmlFactory$createFor$lambda_4(closure$missionPart, this$createFor) {
     return function ($receiver) {
-      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_7(closure$missionPart));
-      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_8);
+      span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_8(closure$missionPart));
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda_9);
       var state = closure$missionPart.enabled;
       bindTo$break: do {
         var tmp$, tmp$_0, tmp$_1, tmp$_2;
@@ -508,10 +540,138 @@
     simpleName: 'Challenge',
     interfaces: []
   };
-  function Mission(name, description, missionParts) {
+  function Image(path, description) {
+    Image$Companion_getInstance();
+    this.path = path;
+    this.description = description;
+  }
+  function Image$Companion() {
+    Image$Companion_instance = this;
+  }
+  Image$Companion.prototype.serializer = function () {
+    return Image$$serializer_getInstance();
+  };
+  Image$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var Image$Companion_instance = null;
+  function Image$Companion_getInstance() {
+    if (Image$Companion_instance === null) {
+      new Image$Companion();
+    }
+    return Image$Companion_instance;
+  }
+  function Image$$serializer() {
+    this.descriptor_d5liam$_0 = new SerialClassDescImpl('mission.Image', this);
+    this.descriptor.addElement_ivxn3r$('path', false);
+    this.descriptor.addElement_ivxn3r$('description', false);
+    Image$$serializer_instance = this;
+  }
+  Object.defineProperty(Image$$serializer.prototype, 'descriptor', {
+    get: function () {
+      return this.descriptor_d5liam$_0;
+    }
+  });
+  Image$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
+    var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
+    output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.path);
+    output.encodeStringElement_bgm7zs$(this.descriptor, 1, obj.description);
+    output.endStructure_qatsm0$(this.descriptor);
+  };
+  Image$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
+    var index, readAll = false;
+    var bitMask0 = 0;
+    var local0
+    , local1;
+    var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
+    loopLabel: while (true) {
+      index = input.decodeElementIndex_qatsm0$(this.descriptor);
+      switch (index) {
+        case -2:
+          readAll = true;
+        case 0:
+          local0 = input.decodeStringElement_3zr2iy$(this.descriptor, 0);
+          bitMask0 |= 1;
+          if (!readAll)
+            break;
+        case 1:
+          local1 = input.decodeStringElement_3zr2iy$(this.descriptor, 1);
+          bitMask0 |= 2;
+          if (!readAll)
+            break;
+        case -1:
+          break loopLabel;
+        default:throw new UnknownFieldException(index);
+      }
+    }
+    input.endStructure_qatsm0$(this.descriptor);
+    return Image_init(bitMask0, local0, local1, null);
+  };
+  Image$$serializer.prototype.childSerializers = function () {
+    return [internal.StringSerializer, internal.StringSerializer];
+  };
+  Image$$serializer.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: '$serializer',
+    interfaces: [GeneratedSerializer]
+  };
+  var Image$$serializer_instance = null;
+  function Image$$serializer_getInstance() {
+    if (Image$$serializer_instance === null) {
+      new Image$$serializer();
+    }
+    return Image$$serializer_instance;
+  }
+  function Image_init(seen1, path, description, serializationConstructorMarker) {
+    var $this = serializationConstructorMarker || Object.create(Image.prototype);
+    if ((seen1 & 1) === 0)
+      throw new MissingFieldException('path');
+    else
+      $this.path = path;
+    if ((seen1 & 2) === 0)
+      throw new MissingFieldException('description');
+    else
+      $this.description = description;
+    return $this;
+  }
+  Image.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Image',
+    interfaces: []
+  };
+  Image.prototype.component1 = function () {
+    return this.path;
+  };
+  Image.prototype.component2 = function () {
+    return this.description;
+  };
+  Image.prototype.copy_puj7f4$ = function (path, description) {
+    return new Image(path === void 0 ? this.path : path, description === void 0 ? this.description : description);
+  };
+  Image.prototype.toString = function () {
+    return 'Image(path=' + Kotlin.toString(this.path) + (', description=' + Kotlin.toString(this.description)) + ')';
+  };
+  Image.prototype.hashCode = function () {
+    var result = 0;
+    result = result * 31 + Kotlin.hashCode(this.path) | 0;
+    result = result * 31 + Kotlin.hashCode(this.description) | 0;
+    return result;
+  };
+  Image.prototype.equals = function (other) {
+    return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && (Kotlin.equals(this.path, other.path) && Kotlin.equals(this.description, other.description)))));
+  };
+  function Mission(id, name, description, images, missionParts) {
     Mission$Companion_getInstance();
+    if (description === void 0)
+      description = '';
+    if (images === void 0)
+      images = ArrayList_init();
+    this.id = id;
     this.name = name;
     this.description = description;
+    this.images = images;
     this.missionParts = missionParts;
     this.totalScore = new State(0);
     var tmp$;
@@ -523,7 +683,7 @@
   }
   function Mission$Companion() {
     Mission$Companion_instance = this;
-    this.helper_0 = new SerializationHelper(getKClass(Mission), hashMapOf([to(0, new HelperHolder('name', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda)), to(1, new HelperHolder('description', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda_0)), to(2, new HelperHolder('missionParts', get_list(new PolymorphicSerializer(getKClass(MissionPart))), Mission$Companion$helper$lambda_1)), to(3, new HelperHolder('totalScore', new StateSerializer(serializer_0(kotlin_js_internal_IntCompanionObject)), Mission$Companion$helper$lambda_2))]), Mission$Companion$helper$lambda_3);
+    this.helper_0 = new SerializationHelper(getKClass(Mission), hashMapOf([to(0, new HelperHolder('id', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda)), to(1, new HelperHolder('name', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda_0)), to(2, new HelperHolder('description', serializer(kotlin_js_internal_StringCompanionObject), Mission$Companion$helper$lambda_1)), to(3, new HelperHolder('images', get_list(Image$Companion_getInstance().serializer()), Mission$Companion$helper$lambda_2)), to(4, new HelperHolder('missionParts', get_list(new PolymorphicSerializer(getKClass(MissionPart))), Mission$Companion$helper$lambda_3)), to(5, new HelperHolder('totalScore', new StateSerializer(serializer_0(kotlin_js_internal_IntCompanionObject)), Mission$Companion$helper$lambda_4))]), Mission$Companion$helper$lambda_5);
     this.descriptor_bkbtbv$_0 = this.helper_0.descriptor;
   }
   Object.defineProperty(Mission$Companion.prototype, 'descriptor', {
@@ -541,25 +701,35 @@
     return Mission$Companion_getInstance();
   };
   function Mission$Companion$helper$lambda(it) {
-    return it.name;
+    return it.id;
   }
   function Mission$Companion$helper$lambda_0(it) {
-    return it.description;
+    return it.name;
   }
   function Mission$Companion$helper$lambda_1(it) {
-    return it.missionParts;
+    return it.description;
   }
   function Mission$Companion$helper$lambda_2(it) {
-    return it.totalScore;
+    return it.description;
   }
   function Mission$Companion$helper$lambda_3(it) {
-    var tmp$, tmp$_0, tmp$_1;
-    var $receiver = new Mission(typeof (tmp$ = it.get_11rb$('name')) === 'string' ? tmp$ : throwCCE(), typeof (tmp$_0 = it.get_11rb$('description')) === 'string' ? tmp$_0 : throwCCE(), Kotlin.isType(tmp$_1 = it.get_11rb$('missionParts'), List) ? tmp$_1 : throwCCE());
-    var tmp$_2, tmp$_3;
-    if ((tmp$_3 = (tmp$_2 = it.get_11rb$('totalScore')) != null ? tmp$_2 : null) != null) {
-      $receiver.totalScore.update_trkh7z$(tmp$_3.getCurrentState());
+    return it.missionParts;
+  }
+  function Mission$Companion$helper$lambda_4(it) {
+    return it.totalScore;
+  }
+  function Mission$Companion$helper$lambda_5(it) {
+    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4, tmp$_5, tmp$_6;
+    tmp$_0 = typeof (tmp$ = it.get_11rb$('id')) === 'string' ? tmp$ : throwCCE();
+    tmp$_2 = typeof (tmp$_1 = it.get_11rb$('name')) === 'string' ? tmp$_1 : throwCCE();
+    tmp$_4 = typeof (tmp$_3 = it.get_11rb$('description')) === 'string' ? tmp$_3 : throwCCE();
+    var $receiver = (tmp$_5 = it.get_11rb$('images')) != null ? tmp$_5 : null;
+    var $receiver_0 = new Mission(tmp$_0, tmp$_2, tmp$_4, $receiver != null ? $receiver : emptyList(), Kotlin.isType(tmp$_6 = it.get_11rb$('missionParts'), List) ? tmp$_6 : throwCCE());
+    var tmp$_7, tmp$_8;
+    if ((tmp$_8 = (tmp$_7 = it.get_11rb$('totalScore')) != null ? tmp$_7 : null) != null) {
+      $receiver_0.totalScore.update_trkh7z$(tmp$_8.getCurrentState());
     }
-    return $receiver;
+    return $receiver_0;
   }
   Mission$Companion.$metadata$ = {
     kind: Kind_OBJECT,
@@ -1004,10 +1174,13 @@
       return new Pair(it, closure$calculateScore(it));
     };
   }
-  function ExtraPointsForAllCompletedMissionsMissionPart(description, scorePerCompletion) {
+  function ExtraPointsForAllCompletedMissionsMissionPart(description, scorePerCompletion, exceptions) {
     ExtraPointsForAllCompletedMissionsMissionPart$Companion_getInstance();
+    if (exceptions === void 0)
+      exceptions = HashMap_init();
     this.description = description;
     this.scorePerCompletion = scorePerCompletion;
+    this.exceptions = exceptions;
     this.missions_cbty3s$_0 = this.missions_cbty3s$_0;
     this.myMission_x7o8j9$_0 = this.myMission_x7o8j9$_0;
     this.score_0 = new State(0);
@@ -1048,13 +1221,13 @@
       return Unit;
     };
   }
-  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart) {
+  function ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this$ExtraPointsForAllCompletedMissionsMissionPart, closure$it) {
     return function (previous, new_0) {
       if (previous === 0 && new_0 > 0) {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 + this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
+        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 + this$ExtraPointsForAllCompletedMissionsMissionPart.getScoreForMission_0(closure$it) | 0;
       }
        else if (previous > 0 && new_0 === 0) {
-        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 - this$ExtraPointsForAllCompletedMissionsMissionPart.scorePerCompletion | 0;
+        this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 = this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0 - this$ExtraPointsForAllCompletedMissionsMissionPart.getScoreForMission_0(closure$it) | 0;
       }
       if (this$ExtraPointsForAllCompletedMissionsMissionPart.enabled.getCurrentState()) {
         this$ExtraPointsForAllCompletedMissionsMissionPart.score_0.update_trkh7z$(this$ExtraPointsForAllCompletedMissionsMissionPart.backingScore_0);
@@ -1073,10 +1246,16 @@
       action$break: do {
         if (equals(element, myMission))
           break action$break;
-        element.totalScore.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this));
+        element.totalScore.observe_e2wk6p$(ExtraPointsForAllCompletedMissionsMissionPart$initialize$lambda$lambda(this, element));
       }
        while (false);
     }
+  };
+  ExtraPointsForAllCompletedMissionsMissionPart.prototype.getScoreForMission_0 = function (mission) {
+    var $receiver = this.exceptions;
+    var key = mission.id;
+    var tmp$;
+    return (tmp$ = $receiver.get_11rb$(key)) != null ? tmp$ : this.scorePerCompletion;
   };
   function ExtraPointsForAllCompletedMissionsMissionPart$Companion() {
     ExtraPointsForAllCompletedMissionsMissionPart$Companion_instance = this;
@@ -1100,6 +1279,7 @@
     this.descriptor_w4txwo$_0 = new SerialClassDescImpl('ExtraPointsForAllCompletedMissionsMissionPart', this);
     this.descriptor.addElement_ivxn3r$('description', false);
     this.descriptor.addElement_ivxn3r$('scorePerCompletion', false);
+    this.descriptor.addElement_ivxn3r$('exceptions', true);
     this.descriptor.addElement_ivxn3r$('score', true);
     this.descriptor.addElement_ivxn3r$('backingScore', true);
     this.descriptor.addElement_ivxn3r$('enabled', true);
@@ -1114,12 +1294,14 @@
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.description);
     output.encodeIntElement_4wpqag$(this.descriptor, 1, obj.scorePerCompletion);
-    if (!equals(obj.score_0, new State(0)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 2))
-      output.encodeSerializableElement_blecud$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), obj.score_0);
-    if (!equals(obj.backingScore_0, 0) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 3))
-      output.encodeIntElement_4wpqag$(this.descriptor, 3, obj.backingScore_0);
-    if (!equals(obj.enabled, new State(false)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 4))
-      output.encodeSerializableElement_blecud$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), obj.enabled);
+    if (!equals(obj.exceptions, HashMap_init()) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 2))
+      output.encodeSerializableElement_blecud$(this.descriptor, 2, new LinkedHashMapSerializer(internal.StringSerializer, internal.IntSerializer), obj.exceptions);
+    if (!equals(obj.score_0, new State(0)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 3))
+      output.encodeSerializableElement_blecud$(this.descriptor, 3, new StateSerializer(internal.IntSerializer), obj.score_0);
+    if (!equals(obj.backingScore_0, 0) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 4))
+      output.encodeIntElement_4wpqag$(this.descriptor, 4, obj.backingScore_0);
+    if (!equals(obj.enabled, new State(false)) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 5))
+      output.encodeSerializableElement_blecud$(this.descriptor, 5, new StateSerializer(internal.BooleanSerializer), obj.enabled);
     output.endStructure_qatsm0$(this.descriptor);
   };
   ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
@@ -1129,7 +1311,8 @@
     , local1
     , local2
     , local3
-    , local4;
+    , local4
+    , local5;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -1147,18 +1330,23 @@
           if (!readAll)
             break;
         case 2:
-          local2 = (bitMask0 & 4) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 2, new StateSerializer(internal.IntSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 2, new StateSerializer(internal.IntSerializer), local2);
+          local2 = (bitMask0 & 4) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 2, new LinkedHashMapSerializer(internal.StringSerializer, internal.IntSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 2, new LinkedHashMapSerializer(internal.StringSerializer, internal.IntSerializer), local2);
           bitMask0 |= 4;
           if (!readAll)
             break;
         case 3:
-          local3 = input.decodeIntElement_3zr2iy$(this.descriptor, 3);
+          local3 = (bitMask0 & 8) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 3, new StateSerializer(internal.IntSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 3, new StateSerializer(internal.IntSerializer), local3);
           bitMask0 |= 8;
           if (!readAll)
             break;
         case 4:
-          local4 = (bitMask0 & 16) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 4, new StateSerializer(internal.BooleanSerializer), local4);
+          local4 = input.decodeIntElement_3zr2iy$(this.descriptor, 4);
           bitMask0 |= 16;
+          if (!readAll)
+            break;
+        case 5:
+          local5 = (bitMask0 & 32) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 5, new StateSerializer(internal.BooleanSerializer)) : input.updateSerializableElement_ehubvl$(this.descriptor, 5, new StateSerializer(internal.BooleanSerializer), local5);
+          bitMask0 |= 32;
           if (!readAll)
             break;
         case -1:
@@ -1167,10 +1355,10 @@
       }
     }
     input.endStructure_qatsm0$(this.descriptor);
-    return ExtraPointsForAllCompletedMissionsMissionPart_init(bitMask0, local0, local1, local2, local3, local4, null);
+    return ExtraPointsForAllCompletedMissionsMissionPart_init(bitMask0, local0, local1, local2, local3, local4, local5, null);
   };
   ExtraPointsForAllCompletedMissionsMissionPart$$serializer.prototype.childSerializers = function () {
-    return [internal.StringSerializer, internal.IntSerializer, new StateSerializer(internal.IntSerializer), internal.IntSerializer, new StateSerializer(internal.BooleanSerializer)];
+    return [internal.StringSerializer, internal.IntSerializer, new LinkedHashMapSerializer(internal.StringSerializer, internal.IntSerializer), new StateSerializer(internal.IntSerializer), internal.IntSerializer, new StateSerializer(internal.BooleanSerializer)];
   };
   ExtraPointsForAllCompletedMissionsMissionPart$$serializer.$metadata$ = {
     kind: Kind_OBJECT,
@@ -1184,7 +1372,7 @@
     }
     return ExtraPointsForAllCompletedMissionsMissionPart$$serializer_instance;
   }
-  function ExtraPointsForAllCompletedMissionsMissionPart_init(seen1, description, scorePerCompletion, score, backingScore, enabled, serializationConstructorMarker) {
+  function ExtraPointsForAllCompletedMissionsMissionPart_init(seen1, description, scorePerCompletion, exceptions, score, backingScore, enabled, serializationConstructorMarker) {
     var $this = serializationConstructorMarker || Object.create(ExtraPointsForAllCompletedMissionsMissionPart.prototype);
     if ((seen1 & 1) === 0)
       throw new MissingFieldException('description');
@@ -1195,14 +1383,18 @@
     else
       $this.scorePerCompletion = scorePerCompletion;
     if ((seen1 & 4) === 0)
+      $this.exceptions = HashMap_init();
+    else
+      $this.exceptions = exceptions;
+    if ((seen1 & 8) === 0)
       $this.score_0 = new State(0);
     else
       $this.score_0 = score;
-    if ((seen1 & 8) === 0)
+    if ((seen1 & 16) === 0)
       $this.backingScore_0 = 0;
     else
       $this.backingScore_0 = backingScore;
-    if ((seen1 & 16) === 0)
+    if ((seen1 & 32) === 0)
       $this.enabled = new State(false);
     else
       $this.enabled = enabled;
@@ -1629,6 +1821,14 @@
   });
   var package$mission = _.mission || (_.mission = {});
   package$mission.Challenge = Challenge;
+  Object.defineProperty(Image, 'Companion', {
+    get: Image$Companion_getInstance
+  });
+  Object.defineProperty(Image, '$serializer', {
+    get: Image$$serializer_getInstance
+  });
+  package$mission.Image_init_2u6d5w$ = Image_init;
+  package$mission.Image = Image;
   Object.defineProperty(Mission, 'Companion', {
     get: Mission$Companion_getInstance
   });
@@ -1664,7 +1864,7 @@
     get: ExtraPointsForAllCompletedMissionsMissionPart$$serializer_getInstance
   });
   var package$special = package$parts.special || (package$parts.special = {});
-  package$special.ExtraPointsForAllCompletedMissionsMissionPart_init_aka52o$ = ExtraPointsForAllCompletedMissionsMissionPart_init;
+  package$special.ExtraPointsForAllCompletedMissionsMissionPart_init_fj3n68$ = ExtraPointsForAllCompletedMissionsMissionPart_init;
   package$special.ExtraPointsForAllCompletedMissionsMissionPart = ExtraPointsForAllCompletedMissionsMissionPart;
   var package$serialization = _.serialization || (_.serialization = {});
   Object.defineProperty(package$serialization, 'MapIntIntSerializer', {
@@ -1692,6 +1892,7 @@
     get: FileUtil_getInstance
   });
   Challenge$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
+  Image$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   Mission$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   CheckBoxMissionPart$Companion.prototype.patch_mynpiu$ = KSerializer.prototype.patch_mynpiu$;
   MultipleChoiceMissionPart$Choice$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
