@@ -2,17 +2,23 @@
   "name": "Challenge 2019",
   "missions": [
     {
+      "id": "M00",
       "name": "Voordeel",
       "description": "http://firstlegoleague.nl/wp-content/uploads/2019/09/CITY-SHAPER-Official-Scoreheet.pdf",
       "missionParts": [
         {
           "type": "ExtraPointsForAllCompletedMissionsMissionPart",
           "description": "De robot en uitrusting past in het kleine inspectiegebied",
-          "scorePerCompletion": 5
+          "scorePerCompletion": 5,
+          "exceptions": {
+            "M14": 0,
+            "M02": 10
+          }
         }
       ]
     },
     {
+      "id": "M01",
       "name": "M01 - Verhoogde Plaatsen",
       "description": "",
       "missionParts": [
@@ -35,8 +41,23 @@
       ]
     },
     {
+      "id": "M02",
       "name": "M02 - Hijskraan",
       "description": "",
+      "images":  [
+        {
+          "path": "2019-2020/crane1.png",
+          "description": "Duidelijk verlaagd"
+        },
+        {
+          "path": "2019-2020/crane2.png",
+          "description": "Ondersteund door andere blauwe unit"
+        },
+        {
+          "path": "2019-2020/crane3.png",
+          "description": "Niveau volledig in blauwe cirkel"
+        }
+      ],
       "missionParts": [
         {
           "type": "CheckBoxMissionPart",
@@ -56,6 +77,7 @@
       ]
     },
     {
+      "id": "M03",
       "name": "M03 - Inspectie Drone",
       "description": "",
       "missionParts": [
@@ -67,6 +89,7 @@
       ]
     },
     {
+      "id": "M04",
       "name": "M04 - Ontwerp voor dieren in het wild",
       "description": "",
       "missionParts": [
@@ -78,6 +101,7 @@
       ]
     },
     {
+      "id": "M05",
       "name": "M05 - Boomhut",
       "description": "",
       "missionParts": [
@@ -136,6 +160,7 @@
       ]
     },
     {
+      "id": "M06",
       "name": "M06 - Verkeersopstopping",
       "description": "",
       "missionParts": [
@@ -147,6 +172,7 @@
       ]
     },
     {
+      "id": "M07",
       "name": "M07 - Schommel",
       "description": "",
       "missionParts": [
@@ -158,6 +184,7 @@
       ]
     },
     {
+      "id": "M08",
       "name": "M08 - Lift",
       "description": "",
       "missionParts": [
@@ -173,6 +200,7 @@
       ]
     },
     {
+      "id": "M09",
       "name": "M09 - Veiligheidsfactor",
       "description": "",
       "missionParts": [
@@ -199,6 +227,7 @@
       ]
     },
     {
+      "id": "M10",
       "name": "M10 - Staalconstructie",
       "description": "",
       "missionParts": [
@@ -210,6 +239,7 @@
       ]
     },
     {
+      "id": "M11",
       "name": "M11 - Innovatieve architectuur",
       "description": "",
       "missionParts": [
@@ -230,6 +260,7 @@
       ]
     },
     {
+      "id": "M12",
       "name": "M12 - Ontwerp & bouw",
       "description": "",
       "missionParts": [
@@ -288,6 +319,7 @@
       ]
     },
     {
+      "id": "M13",
       "name": "M13 - Duurzaamheidupgrades",
       "description": "",
       "missionParts": [
@@ -306,6 +338,7 @@
       ]
     },
     {
+      "id": "M14",
       "name": "M14 - Precisie",
       "description": "",
       "missionParts": [

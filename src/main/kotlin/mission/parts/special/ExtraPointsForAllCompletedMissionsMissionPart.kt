@@ -10,7 +10,9 @@ import state.State
 @Serializable
 @SerialName("ExtraPointsForAllCompletedMissionsMissionPart")
 class ExtraPointsForAllCompletedMissionsMissionPart(val description: String,
-                                                    val scorePerCompletion: Int) : MissionPart {
+                                                    val scorePerCompletion: Int,
+                                                    val exceptions: Map<String, Int> = HashMap()
+) : MissionPart {
     override fun getScore(): State<Int> = score
 
     @Transient
@@ -43,17 +45,19 @@ class ExtraPointsForAllCompletedMissionsMissionPart(val description: String,
             // Update the backing score on change
             it.totalScore.observe { previous, new ->
                 if (previous == 0 && new > 0) {
-                    backingScore += scorePerCompletion
+                    backingScore += getScoreForMission(it)
                 } else if (previous > 0 && new == 0) {
-                    backingScore -= scorePerCompletion
+                    backingScore -= getScoreForMission(it)
                 }
-
                 //If the current state is enabled, also update the shown score
                 if(enabled.getCurrentState()) {
                     score.update(backingScore)
                 }
             }
         }
+    }
 
+    private fun getScoreForMission(mission: Mission): Int{
+        return exceptions.getOrElse(mission.id) { scorePerCompletion }
     }
 }

@@ -2,18 +2,14 @@ package factory
 
 import kotlinx.html.InputType
 import kotlinx.html.TagConsumer
-import kotlinx.html.h1
-import kotlinx.html.js.div
-import kotlinx.html.js.input
-import kotlinx.html.js.span
-import kotlinx.html.label
+import kotlinx.html.js.*
 import mission.Challenge
 import mission.Mission
 import mission.MissionPart
 import mission.parts.CheckBoxMissionPart
 import mission.parts.MultipleChoiceMissionPart
-import mission.parts.special.ExtraPointsForAllCompletedMissionsMissionPart
 import mission.parts.SliderMissionPart
+import mission.parts.special.ExtraPointsForAllCompletedMissionsMissionPart
 import org.w3c.dom.HTMLElement
 import state.bindTo
 
@@ -36,10 +32,24 @@ object HtmlFactory {
                 span { +mission.name }
                 span { }.bindTo(mission.totalScore)
             }
-            mission.missionParts.forEach {
-                createFor(it)
+            div("flex-row flex-filler") {
+                if(mission.images.isNotEmpty()){
+                    div {
+                        img(classes = "mission-main-image",
+                            src = "img/${mission.images.first().path}",
+                            alt = mission.images.first().description
+                        ) {  }
+                    }
+                }
+                div("flex-column flex-filler") {
+                    mission.missionParts.forEach {
+                        createFor(it)
+                    }
+                }
             }
+
         }
+
     }
 
     fun TagConsumer<HTMLElement>.createFor(missionPart: MissionPart) {
@@ -98,7 +108,7 @@ object HtmlFactory {
                         id = inputId
                     }.bindTo(missionPart.selectedIndex)
                     label {
-                        htmlFor =  inputId
+                        htmlFor = inputId
                         +item.choice
                     }
                 }
