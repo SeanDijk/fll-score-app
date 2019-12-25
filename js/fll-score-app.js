@@ -18,15 +18,29 @@
 }(this, function (_, Kotlin, $module$kotlinx_html_js, $module$kotlinx_serialization_kotlinx_serialization_runtime) {
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
+  var Kind_CLASS = Kotlin.Kind.CLASS;
+  var throwUPAE = Kotlin.throwUPAE;
   var Unit = Kotlin.kotlin.Unit;
-  var h1 = $module$kotlinx_html_js.kotlinx.html.js.h1_1esf85$;
-  var div = $module$kotlinx_html_js.kotlinx.html.js.div_wkomt5$;
+  var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
+  var label = $module$kotlinx_html_js.kotlinx.html.label_yd75js$;
+  var textInput = $module$kotlinx_html_js.kotlinx.html.textInput_ap9uf6$;
+  var div = $module$kotlinx_html_js.kotlinx.html.div_ri36nr$;
+  var set_id = $module$kotlinx_html_js.kotlinx.html.set_id_ueiko3$;
+  var h2 = $module$kotlinx_html_js.kotlinx.html.h2_eh5gi3$;
+  var set_onClickFunction = $module$kotlinx_html_js.kotlinx.html.js.set_onClickFunction_pszlq2$;
+  var button = $module$kotlinx_html_js.kotlinx.html.button_i4xb7r$;
+  var div_0 = $module$kotlinx_html_js.kotlinx.html.div_59el9d$;
+  var throwCCE = Kotlin.throwCCE;
+  var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
+  var lazy = Kotlin.kotlin.lazy_klfg04$;
+  var HashMap_init = Kotlin.kotlin.collections.HashMap_init_q3lmfv$;
+  var h1_0 = $module$kotlinx_html_js.kotlinx.html.js.h1_1esf85$;
+  var div_1 = $module$kotlinx_html_js.kotlinx.html.js.div_wkomt5$;
   var span = $module$kotlinx_html_js.kotlinx.html.js.span_x24v7w$;
   var Int = Number;
   var PrimitiveClasses$intClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.intClass;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
   var img = $module$kotlinx_html_js.kotlinx.html.js.img_6lw7hj$;
-  var throwCCE = Kotlin.throwCCE;
   var getKClass = Kotlin.getKClass;
   var equals = Kotlin.equals;
   var toString = Kotlin.toString;
@@ -36,7 +50,7 @@
   var Boolean_0 = Boolean;
   var PrimitiveClasses$booleanClass = Kotlin.kotlin.reflect.js.internal.PrimitiveClasses.booleanClass;
   var hashCode = Kotlin.hashCode;
-  var label = $module$kotlinx_html_js.kotlinx.html.js.label_uo7uay$;
+  var label_0 = $module$kotlinx_html_js.kotlinx.html.js.label_uo7uay$;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
   var checkIndexOverflow = Kotlin.kotlin.collections.checkIndexOverflow_za3lpa$;
@@ -49,7 +63,6 @@
   var hashMapOf = Kotlin.kotlin.collections.hashMapOf_qfcya0$;
   var List = Kotlin.kotlin.collections.List;
   var KSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.KSerializer;
-  var Kind_CLASS = Kotlin.Kind.CLASS;
   var SerialClassDescImpl = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.SerialClassDescImpl;
   var UnknownFieldException = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.UnknownFieldException;
   var internal = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal;
@@ -61,7 +74,6 @@
   var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Json = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.json.Json;
-  var append = $module$kotlinx_html_js.kotlinx.html.dom.append_k9bwru$;
   var kotlin_js_internal_BooleanCompanionObject = Kotlin.kotlin.js.internal.BooleanCompanionObject;
   var serializer_1 = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.serializer_jtjczu$;
   var Map = Kotlin.kotlin.collections.Map;
@@ -71,9 +83,7 @@
   var map = Kotlin.kotlin.sequences.map_z5avom$;
   var toMap = Kotlin.kotlin.collections.toMap_ah2ab9$;
   var IllegalStateException_init = Kotlin.kotlin.IllegalStateException_init_pdl1vj$;
-  var throwUPAE = Kotlin.throwUPAE;
   var LinkedHashMapSerializer = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.internal.LinkedHashMapSerializer;
-  var HashMap_init = Kotlin.kotlin.collections.HashMap_init_q3lmfv$;
   var get_map = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.get_map_kgqhr1$;
   var withName = $module$kotlinx_serialization_kotlinx_serialization_runtime.kotlinx.serialization.withName_8new1j$;
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
@@ -88,6 +98,153 @@
   var toShort = Kotlin.toShort;
   SerializationHelper$descriptor$ObjectLiteral.prototype = Object.create(SerialClassDescImpl.prototype);
   SerializationHelper$descriptor$ObjectLiteral.prototype.constructor = SerializationHelper$descriptor$ObjectLiteral;
+  function ChallengeBuilder() {
+  }
+  ChallengeBuilder.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'ChallengeBuilder',
+    interfaces: []
+  };
+  function ChallengeBuilderView() {
+    this.outerDiv_gu6i7y$_0 = this.outerDiv_gu6i7y$_0;
+    this.missionSection_2obraz$_0 = lazy(ChallengeBuilderView$missionSection$lambda(this));
+  }
+  Object.defineProperty(ChallengeBuilderView.prototype, 'outerDiv', {
+    get: function () {
+      if (this.outerDiv_gu6i7y$_0 == null)
+        return throwUPAE('outerDiv');
+      return this.outerDiv_gu6i7y$_0;
+    },
+    set: function (outerDiv) {
+      this.outerDiv_gu6i7y$_0 = outerDiv;
+    }
+  });
+  Object.defineProperty(ChallengeBuilderView.prototype, 'missionSection', {
+    get: function () {
+      return this.missionSection_2obraz$_0.value;
+    }
+  });
+  function ChallengeBuilderView$create$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Builder');
+    return Unit;
+  }
+  function ChallengeBuilderView$create$lambda$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Name: ');
+    return Unit;
+  }
+  function ChallengeBuilderView$create$lambda$lambda$lambda_0($receiver) {
+    return Unit;
+  }
+  function ChallengeBuilderView$create$lambda$lambda_0($receiver) {
+    label($receiver, void 0, ChallengeBuilderView$create$lambda$lambda$lambda);
+    textInput($receiver, void 0, void 0, void 0, void 0, ChallengeBuilderView$create$lambda$lambda$lambda_0);
+    return Unit;
+  }
+  function ChallengeBuilderView$create$lambda$lambda$lambda_1($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Missions: ');
+    return Unit;
+  }
+  function ChallengeBuilderView$create$lambda$lambda_1($receiver) {
+    set_id($receiver, 'newMissions');
+    h2($receiver, void 0, ChallengeBuilderView$create$lambda$lambda$lambda_1);
+    return Unit;
+  }
+  function ChallengeBuilderView$create$lambda$lambda_2(this$ChallengeBuilderView) {
+    return function ($receiver) {
+      $receiver.unaryPlus_pdl1vz$('Add mission');
+      set_onClickFunction($receiver, this$ChallengeBuilderView.createNewMission_0());
+      return Unit;
+    };
+  }
+  function ChallengeBuilderView$create$lambda(this$ChallengeBuilderView) {
+    return function ($receiver) {
+      h1($receiver, void 0, ChallengeBuilderView$create$lambda$lambda);
+      div($receiver, 'flex-row', ChallengeBuilderView$create$lambda$lambda_0);
+      div($receiver, 'flex-column', ChallengeBuilderView$create$lambda$lambda_1);
+      button($receiver, void 0, void 0, void 0, void 0, void 0, ChallengeBuilderView$create$lambda$lambda_2(this$ChallengeBuilderView));
+      return Unit;
+    };
+  }
+  ChallengeBuilderView.prototype.create_q0cphf$ = function (tagConsumer) {
+    var tmp$;
+    this.outerDiv = Kotlin.isType(tmp$ = div_0(tagConsumer, 'flex-column', ChallengeBuilderView$create$lambda(this)), HTMLDivElement) ? tmp$ : throwCCE();
+  };
+  function ChallengeBuilderView$createNewMission$lambda$lambda($receiver) {
+    (new ChallengeBuilderView$MissionBuilderView()).create_q0cphf$($receiver);
+    return Unit;
+  }
+  function ChallengeBuilderView$createNewMission$lambda(this$ChallengeBuilderView) {
+    return function (it) {
+      append(this$ChallengeBuilderView.missionSection, ChallengeBuilderView$createNewMission$lambda$lambda);
+      return Unit;
+    };
+  }
+  ChallengeBuilderView.prototype.createNewMission_0 = function () {
+    return ChallengeBuilderView$createNewMission$lambda(this);
+  };
+  function ChallengeBuilderView$MissionBuilderView() {
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Name: ');
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda_0($receiver) {
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda($receiver) {
+    label($receiver, void 0, ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda);
+    textInput($receiver, void 0, void 0, void 0, void 0, ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda_0);
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda_1($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Description: ');
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda_2($receiver) {
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda_0($receiver) {
+    label($receiver, void 0, ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda_1);
+    textInput($receiver, void 0, void 0, void 0, void 0, ChallengeBuilderView$MissionBuilderView$create$lambda$lambda$lambda_2);
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda$lambda_1($receiver) {
+    return Unit;
+  }
+  function ChallengeBuilderView$MissionBuilderView$create$lambda($receiver) {
+    div($receiver, 'flex-row', ChallengeBuilderView$MissionBuilderView$create$lambda$lambda);
+    div($receiver, 'flex-row', ChallengeBuilderView$MissionBuilderView$create$lambda$lambda_0);
+    div($receiver, void 0, ChallengeBuilderView$MissionBuilderView$create$lambda$lambda_1);
+    return Unit;
+  }
+  ChallengeBuilderView$MissionBuilderView.prototype.create_q0cphf$ = function (tagConsumer) {
+    div_0(tagConsumer, 'flex-column', ChallengeBuilderView$MissionBuilderView$create$lambda);
+  };
+  ChallengeBuilderView$MissionBuilderView.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'MissionBuilderView',
+    interfaces: []
+  };
+  function ChallengeBuilderView$missionSection$lambda(this$ChallengeBuilderView) {
+    return function () {
+      var tmp$;
+      return Kotlin.isType(tmp$ = this$ChallengeBuilderView.outerDiv.querySelector('#newMissions'), HTMLDivElement) ? tmp$ : throwCCE();
+    };
+  }
+  ChallengeBuilderView.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'ChallengeBuilderView',
+    interfaces: []
+  };
+  function ChallengeBuilderViewModel() {
+    this.challengeName = new State('');
+    this.missionMap = HashMap_init();
+  }
+  ChallengeBuilderViewModel.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'ChallengeBuilderViewModel',
+    interfaces: []
+  };
   function bindTo$lambda(this$bindTo) {
     return function (f, new_0) {
       this$bindTo.innerText = new_0.toString();
@@ -114,7 +271,7 @@
   }
   function HtmlFactory$createFor$lambda(closure$challenge, this$createFor, this$HtmlFactory) {
     return function ($receiver) {
-      h1(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda(closure$challenge));
+      h1_0(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda(closure$challenge));
       var $receiver_0 = closure$challenge.missions;
       var tmp$;
       tmp$ = $receiver_0.iterator();
@@ -126,7 +283,7 @@
     };
   }
   HtmlFactory.prototype.createFor_8dmwun$ = function ($receiver, challenge) {
-    div($receiver, 'flex-column', HtmlFactory$createFor$lambda(challenge, $receiver, this));
+    div_1($receiver, 'flex-column', HtmlFactory$createFor$lambda(challenge, $receiver, this));
   };
   function HtmlFactory$createFor$lambda$lambda$lambda(closure$mission) {
     return function ($receiver) {
@@ -172,21 +329,21 @@
   function HtmlFactory$createFor$lambda$lambda_1(closure$mission, this$createFor, this$HtmlFactory) {
     return function ($receiver) {
       if (!closure$mission.images.isEmpty()) {
-        div(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda$lambda_1(closure$mission, this$createFor));
+        div_1(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda$lambda_1(closure$mission, this$createFor));
       }
-      div(this$createFor, 'flex-column flex-filler', HtmlFactory$createFor$lambda$lambda$lambda_2(closure$mission, this$HtmlFactory, this$createFor));
+      div_1(this$createFor, 'flex-column flex-filler', HtmlFactory$createFor$lambda$lambda$lambda_2(closure$mission, this$HtmlFactory, this$createFor));
       return Unit;
     };
   }
   function HtmlFactory$createFor$lambda_0(closure$mission, this$createFor, this$HtmlFactory) {
     return function ($receiver) {
-      div(this$createFor, 'flex-row mission-header', HtmlFactory$createFor$lambda$lambda_0(closure$mission, this$createFor));
-      div(this$createFor, 'flex-row flex-filler', HtmlFactory$createFor$lambda$lambda_1(closure$mission, this$createFor, this$HtmlFactory));
+      div_1(this$createFor, 'flex-row mission-header', HtmlFactory$createFor$lambda$lambda_0(closure$mission, this$createFor));
+      div_1(this$createFor, 'flex-row flex-filler', HtmlFactory$createFor$lambda$lambda_1(closure$mission, this$createFor, this$HtmlFactory));
       return Unit;
     };
   }
   HtmlFactory.prototype.createFor_j02ad4$ = function ($receiver, mission) {
-    div($receiver, 'flex-column', HtmlFactory$createFor$lambda_0(mission, $receiver, this));
+    div_1($receiver, 'flex-column', HtmlFactory$createFor$lambda_0(mission, $receiver, this));
   };
   HtmlFactory.prototype.createFor_b8g645$ = function ($receiver, missionPart) {
     var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3;
@@ -246,7 +403,7 @@
     };
   }
   HtmlFactory.prototype.createFor_0 = function ($receiver, missionPart) {
-    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_1(missionPart, $receiver));
+    div_1($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_1(missionPart, $receiver));
   };
   function HtmlFactory$createFor$lambda$lambda_4(closure$missionPart) {
     return function ($receiver) {
@@ -326,12 +483,12 @@
   function HtmlFactory$createFor$lambda_2(closure$missionPart, this$createFor) {
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_4(closure$missionPart));
-      div(this$createFor, 'flex-row', HtmlFactory$createFor$lambda$lambda_5(closure$missionPart, this$createFor));
+      div_1(this$createFor, 'flex-row', HtmlFactory$createFor$lambda$lambda_5(closure$missionPart, this$createFor));
       return Unit;
     };
   }
   HtmlFactory.prototype.createFor_1 = function ($receiver, missionPart) {
-    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_2(missionPart, $receiver));
+    div_1($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_2(missionPart, $receiver));
   };
   function HtmlFactory$createFor$lambda$lambda_6(closure$missionPart) {
     return function ($receiver) {
@@ -339,7 +496,7 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$missionPart, closure$i) {
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda$lambda(closure$missionPart, closure$i) {
     return function ($receiver) {
       $receiver.type = InputType.radio;
       $receiver.name = hashCode(closure$missionPart).toString();
@@ -348,10 +505,40 @@
       return Unit;
     };
   }
-  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_1(closure$inputId, closure$item) {
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda$lambda_0(closure$inputId, closure$item) {
     return function ($receiver) {
       $receiver.htmlFor = closure$inputId;
       $receiver.unaryPlus_pdl1vz$(closure$item.choice);
+      return Unit;
+    };
+  }
+  function HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$missionPart, closure$i, this$createFor, closure$inputId, closure$item) {
+    return function ($receiver) {
+      var $receiver_0 = input_0(this$createFor, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda$lambda(closure$missionPart, closure$i));
+      $receiver_0.id = closure$inputId;
+      var state = closure$missionPart.selectedIndex;
+      bindTo$break: do {
+        var tmp$, tmp$_0, tmp$_1, tmp$_2;
+        if (equals($receiver_0.type, InputType.checkBox.realValue) && ((tmp$ = PrimitiveClasses$intClass) != null ? tmp$.equals(PrimitiveClasses$booleanClass) : null)) {
+          bindToInputCheckBox($receiver_0, state);
+          break bindTo$break;
+        }
+         else if (equals($receiver_0.type, InputType.range.realValue) && ((tmp$_0 = PrimitiveClasses$intClass) != null ? tmp$_0.equals(PrimitiveClasses$intClass) : null)) {
+          bindToInputRange($receiver_0, state);
+          break bindTo$break;
+        }
+         else if (equals($receiver_0.type, InputType.number.realValue) && ((tmp$_1 = PrimitiveClasses$intClass) != null ? tmp$_1.equals(PrimitiveClasses$intClass) : null)) {
+          bindToInputTextField($receiver_0, state, bindTo$lambda_0(Int, Kotlin.isTypeOf('number')), bindTo$lambda_1);
+          break bindTo$break;
+        }
+         else if (equals($receiver_0.type, InputType.radio.realValue) && ((tmp$_2 = PrimitiveClasses$intClass) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
+          bindToRadioButton($receiver_0, state);
+          break bindTo$break;
+        }
+        throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_0.type);
+      }
+       while (false);
+      label_0(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda$lambda_0(closure$inputId, closure$item));
       return Unit;
     };
   }
@@ -361,37 +548,13 @@
       var tmp$, tmp$_0;
       var index = 0;
       tmp$ = $receiver_0.iterator();
-      loop_label: while (tmp$.hasNext()) {
+      while (tmp$.hasNext()) {
         var item = tmp$.next();
         var closure$missionPart_0 = closure$missionPart;
         var this$createFor_0 = this$createFor;
         var i = checkIndexOverflow((tmp$_0 = index, index = tmp$_0 + 1 | 0, tmp$_0));
         var inputId = hashCode(closure$missionPart_0).toString() + i.toString();
-        var $receiver_1 = input_0(this$createFor_0, void 0, void 0, void 0, void 0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$missionPart_0, i));
-        $receiver_1.id = inputId;
-        var state = closure$missionPart_0.selectedIndex;
-        bindTo$break: do {
-          var tmp$_1, tmp$_2, tmp$_3, tmp$_4;
-          if (equals($receiver_1.type, InputType.checkBox.realValue) && ((tmp$_1 = PrimitiveClasses$intClass) != null ? tmp$_1.equals(PrimitiveClasses$booleanClass) : null)) {
-            bindToInputCheckBox($receiver_1, state);
-            break bindTo$break;
-          }
-           else if (equals($receiver_1.type, InputType.range.realValue) && ((tmp$_2 = PrimitiveClasses$intClass) != null ? tmp$_2.equals(PrimitiveClasses$intClass) : null)) {
-            bindToInputRange($receiver_1, state);
-            break bindTo$break;
-          }
-           else if (equals($receiver_1.type, InputType.number.realValue) && ((tmp$_3 = PrimitiveClasses$intClass) != null ? tmp$_3.equals(PrimitiveClasses$intClass) : null)) {
-            bindToInputTextField($receiver_1, state, bindTo$lambda_0(Int, Kotlin.isTypeOf('number')), bindTo$lambda_1);
-            break bindTo$break;
-          }
-           else if (equals($receiver_1.type, InputType.radio.realValue) && ((tmp$_4 = PrimitiveClasses$intClass) != null ? tmp$_4.equals(PrimitiveClasses$intClass) : null)) {
-            bindToRadioButton($receiver_1, state);
-            break bindTo$break;
-          }
-          throw RuntimeException_init('Not defined how to bind to this type! type: ' + $receiver_1.type);
-        }
-         while (false);
-        label(this$createFor_0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_1(inputId, item));
+        div_1(this$createFor_0, void 0, HtmlFactory$createFor$lambda$lambda$lambda$lambda_0(closure$missionPart_0, i, this$createFor_0, inputId, item));
       }
       return Unit;
     };
@@ -399,12 +562,12 @@
   function HtmlFactory$createFor$lambda_3(closure$missionPart, this$createFor) {
     return function ($receiver) {
       span(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_6(closure$missionPart));
-      div(this$createFor, void 0, HtmlFactory$createFor$lambda$lambda_7(closure$missionPart, this$createFor));
+      div_1(this$createFor, 'flex-column text-no-wrap', HtmlFactory$createFor$lambda$lambda_7(closure$missionPart, this$createFor));
       return Unit;
     };
   }
   HtmlFactory.prototype.createFor_2 = function ($receiver, missionPart) {
-    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_3(missionPart, $receiver));
+    div_1($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_3(missionPart, $receiver));
   };
   function HtmlFactory$createFor$lambda$lambda_8(closure$missionPart) {
     return function ($receiver) {
@@ -446,7 +609,7 @@
     };
   }
   HtmlFactory.prototype.createFor_3 = function ($receiver, missionPart) {
-    div($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_4(missionPart, $receiver));
+    div_1($receiver, 'flex-row mission-row', HtmlFactory$createFor$lambda_4(missionPart, $receiver));
   };
   HtmlFactory.$metadata$ = {
     kind: Kind_OBJECT,
@@ -761,29 +924,18 @@
     simpleName: 'MissionPart',
     interfaces: []
   };
-  function main$lambda$lambda$lambda(closure$json, this$) {
-    return function (it) {
-      var challenge = closure$json.parse_awif5v$(Challenge$Companion_getInstance().serializer(), JSON.stringify(it));
-      HtmlFactory_getInstance().createFor_8dmwun$(this$, challenge);
-      return Unit;
-    };
+  function main$lambda$lambda($receiver) {
+    (new ChallengeBuilderView()).create_q0cphf$($receiver);
+    return Unit;
   }
-  function main$lambda$lambda(closure$json) {
-    return function ($receiver) {
-      FileUtil_getInstance().loadJSON_a1vqyy$('defaultChallenges/2019-2020-nl.json', main$lambda$lambda$lambda(closure$json, $receiver));
-      return Unit;
-    };
-  }
-  function main$lambda(closure$json) {
-    return function (it) {
-      var missionsSection = document.getElementById('missions');
-      return missionsSection != null ? append(missionsSection, main$lambda$lambda(closure$json)) : null;
-    };
+  function main$lambda(it) {
+    var missionsSection = document.getElementById('missions');
+    return missionsSection != null ? append(missionsSection, main$lambda$lambda) : null;
   }
   function main(args) {
     println('Hello JavaScript!');
     var json = new Json(void 0, PolyModules_getInstance().missionPart);
-    window.onload = main$lambda(json);
+    window.onload = main$lambda;
   }
   function CheckBoxMissionPart(description, completionScore) {
     CheckBoxMissionPart$Companion_getInstance();
@@ -1811,6 +1963,11 @@
     }
     return FileUtil_instance;
   }
+  var package$challenge = _.challenge || (_.challenge = {});
+  package$challenge.ChallengeBuilder = ChallengeBuilder;
+  ChallengeBuilderView.MissionBuilderView = ChallengeBuilderView$MissionBuilderView;
+  package$challenge.ChallengeBuilderView = ChallengeBuilderView;
+  package$challenge.ChallengeBuilderViewModel = ChallengeBuilderViewModel;
   $$importsForInline$$['fll-score-app'] = _;
   var package$factory = _.factory || (_.factory = {});
   Object.defineProperty(package$factory, 'HtmlFactory', {

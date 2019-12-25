@@ -250,7 +250,7 @@
         },
         {
           "type": "MultipleChoiceMissionPart",
-          "description": "De constructie is in een willekeurige cirke",
+          "description": "De constructie is in een willekeurige cirkel",
           "choices": [
             { "choice": "Nee", "score":  0},
             { "choice": "Gedeeltelijk", "score":  10},
