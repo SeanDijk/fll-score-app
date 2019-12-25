@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .flex-row {
@@ -15,14 +16,27 @@ body {
 .mission-header {
     background: #1976d2;
     color: white;
+    font-weight: bold;
+    /*border-top-left-radius: 12px;*/
+    /*border-top-right-radius: 12px;*/
 }
 
 .mission-row, .mission-header{
-    padding: 8px;
+    padding: 12px;
     box-sizing: border-box;
     justify-content: space-between;
 }
 
+.mission-row {
+    border-width: 0 0 1px 0;
+    border-bottom-color: slategray;
+    border-style: solid;
+}
+
 .flex-filler {
     flex-grow: 100;
+}
+
+.text-no-wrap {
+    white-space: nowrap;
 }

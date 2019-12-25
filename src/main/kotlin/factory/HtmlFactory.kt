@@ -86,24 +86,25 @@ object HtmlFactory {
     private fun TagConsumer<HTMLElement>.createFor(missionPart: MultipleChoiceMissionPart) {
         div("flex-row mission-row") {
             span { +missionPart.description }
-            div {
+            div("flex-column text-no-wrap") {
                 missionPart.choices.forEachIndexed { i, item ->
                     val inputId = missionPart.hashCode().toString() + i.toString()
-                    input {
-                        type = InputType.radio
-                        name = missionPart.hashCode().toString()
-                        value = i.toString()
-                        checked = i == 0
-                    }.apply {
-                        id = inputId
-                    }.bindTo(missionPart.selectedIndex)
-                    label {
-                        htmlFor =  inputId
-                        +item.choice
+                    div {
+                        input {
+                            type = InputType.radio
+                            name = missionPart.hashCode().toString()
+                            value = i.toString()
+                            checked = i == 0
+                        }.apply {
+                            id = inputId
+                        }.bindTo(missionPart.selectedIndex)
+                        label {
+                            htmlFor =  inputId
+                            +item.choice
+                        }
                     }
                 }
             }
-//                .bindTo(missionPart.enabled)
         }
     }
 

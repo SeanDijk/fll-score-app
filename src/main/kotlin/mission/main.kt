@@ -1,5 +1,6 @@
 package mission
 
+import challenge.ChallengeBuilderView
 import factory.HtmlFactory.createFor
 import kotlinx.html.dom.append
 import kotlinx.serialization.ImplicitReflectionSerializer
@@ -17,11 +18,15 @@ fun main(args: Array<String>) {
 
     window.onload = {
         val missionsSection = document.getElementById("missions")
+//        missionsSection?.append {
+//            FileUtil.loadJSON("defaultChallenges/2019-2020-nl.json") {
+//                val challenge = json.parse(Challenge.serializer(), JSON.stringify(it))
+//                createFor(challenge)
+//            }
+//        }
+
         missionsSection?.append {
-            FileUtil.loadJSON("defaultChallenges/2019-2020-nl.json") {
-                val challenge = json.parse(Challenge.serializer(), JSON.stringify(it))
-                createFor(challenge)
-            }
+            ChallengeBuilderView().create(this)
         }
     }
 }
