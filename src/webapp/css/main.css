@@ -17,14 +17,17 @@ body {
     background: #1976d2;
     color: white;
     font-weight: bold;
-    /*border-top-left-radius: 12px;*/
-    /*border-top-right-radius: 12px;*/
 }
 
 .mission-row, .mission-header{
     padding: 12px;
     box-sizing: border-box;
     justify-content: space-between;
+}
+
+.mission-main-image{
+    max-height: 150px;
+    /*max-height: inherit;*/
 }
 
 .mission-row {

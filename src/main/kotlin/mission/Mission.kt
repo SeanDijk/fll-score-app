@@ -1,17 +1,16 @@
 package mission
 
 import kotlinx.serialization.*
-import kotlinx.serialization.internal.SerialClassDescImpl
-import kotlinx.serialization.json.Json
 import serialization.HelperHolder
 import serialization.SerializationHelper
-import state.Observer
 import state.State
 import state.StateSerializer
 
 @Serializable
-class Mission(val name: String,
-              val description: String,
+class Mission(val id: String,
+              val name: String,
+              val description: String = "",
+              val images: List<Image> = ArrayList(),
               val missionParts: List<MissionPart>) {
     val totalScore: State<Int> = State(0)
 
@@ -26,15 +25,19 @@ class Mission(val name: String,
         private val helper = SerializationHelper(
             Mission::class,
             hashMapOf(
-                0 to HelperHolder<Mission, Any>("name", String.serializer()) { it.name },
-                1 to HelperHolder<Mission, Any>("description", String.serializer()) { it.description },
-                2 to HelperHolder<Mission, Any>("missionParts", PolymorphicSerializer(MissionPart::class).list) { it.missionParts },
-                3 to HelperHolder<Mission, Any>("totalScore", StateSerializer(Int.serializer())) { it.totalScore }
+                0 to HelperHolder<Mission, Any>("id", String.serializer()) { it.id },
+                1 to HelperHolder<Mission, Any>("name", String.serializer()) { it.name },
+                2 to HelperHolder<Mission, Any>("description", String.serializer()) { it.description },
+                3 to HelperHolder<Mission, Any>("images", Image.serializer().list) { it.description },
+                4 to HelperHolder<Mission, Any>("missionParts", PolymorphicSerializer(MissionPart::class).list) { it.missionParts },
+                5 to HelperHolder<Mission, Any>("totalScore", StateSerializer(Int.serializer())) { it.totalScore }
             )
         ) {
             Mission(
+                it["id"] as String,
                 it["name"] as String,
                 it["description"] as String,
+                it["images"]?.unsafeCast<List<Image>>().orEmpty(),
                 it["missionParts"] as List<MissionPart>
             ).apply {
                 it["totalScore"]?.unsafeCast<State<Int>>()?.let { x ->
